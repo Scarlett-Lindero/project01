@@ -1,53 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title>Semáforo de Saturación Obstétrica</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      body {
-        font-family: sans-serif;
-        max-width: 600px;
-        margin: 2rem auto;
-        line-height: 1.6;
-        padding: 0 1rem;
-        background-color: #FFE4E1;
-      }
-      h1 {
-        color: #C71585;
-      }
-      iframe {
-        width: 100%;
-        height: 480px;
-        border: none;
-        margin: 1rem 0;
-      }
-      footer {
-        margin-top: 2rem;
-        font-size: 0.9rem;
-        color: #666;
-        border-top: 1px solid #ddd;
-        padding-top: 1rem;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Semáforo de Saturación Obstétrica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <h1>Semáforo de Saturación Obstétrica</h1>
+  <!-- Scrollama -->
+  <script src="https://unpkg.com/scrollama"></script>
 
-    <p>Este proyecto analiza los partos registrados en hospitales públicos durante 2024 para detectar señales de saturación obstétrica. A través de datos abiertos, identificamos lugares donde se concentran cesáreas de urgencia y partos sin atención especializada, lo que podría reflejar riesgos para la salud materna.</p>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #FFE4E1;
+    }
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    .scroll-text {
+      width: 40%;
+      padding: 2rem;
+    }
+    .scroll-text .step {
+      margin: 0 0 4rem 0;
+      padding: 1rem;
+      background: white;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .scroll-text .step.active {
+      background: #fce4ec;
+    }
+    .graphic {
+      width: 60%;
+      position: sticky;
+      top: 2rem;
+      padding: 2rem;
+    }
+    .graphic iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 3rem;
+      padding: 2rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
 
-    <h2>Visualización principal</h2>
+  <div class="container">
+    <div class="scroll-text">
+      <div class="step" data-step="1">
+        <strong>Una de cada dos cesáreas fue de urgencia.</strong><br>
+        El 52.1 % de las cesáreas registradas en 2024 fueron clasificadas como “urgentes”, lo cual puede indicar saturación en la atención obstétrica.
+      </div>
+      <div class="step" data-step="2">
+        <strong>Faltan gineco-obstetras en algunos estados.</strong><br>
+        En ciertas entidades federativas, menos del 60% de los partos fueron atendidos por personal especializado.
+      </div>
+    </div>
 
-    <iframe title="Cesáreas urgentes" src="https://datawrapper.dwcdn.net/2PmGg/1/"></iframe>
+    <div class="graphic">
+      <iframe id="viz" src="https://datawrapper.dwcdn.net/2PmGg/1/"></iframe>
+    </div>
+  </div>
 
-    <h2>¿Por qué importa?</h2>
+  <footer>
+    Hecho por Scarlett Lindero · La Cadera de Eva · 2025
+  </footer>
 
-    <p>Más de la mitad de las cesáreas en hospitales públicos fueron catalogadas como “de urgencia”. En algunos estados, menos del 60 % de los partos son atendidos por gineco-obstetras. Esta situación puede reflejar fallas en el sistema de salud o falta de seguimiento prenatal.</p>
+  <script>
+    const scroller = scrollama();
+    const iframe = document.getElementById("viz");
 
-    <footer>
-      Hecho por Scarlett Lindero · <a href="https://lacaderadeeva.com" target="_blank">La Cadera de Eva</a> · 2025
-    </footer>
+    scroller
+      .setup({
+        step: ".step",
+        offset: 0.5,
+        debug: false
+      })
+      .onStepEnter(response => {
+        document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+        response.element.classList.add('active');
 
-  </body>
+        // Cambiar visualización según paso
+        if (response.index === 0) {
+          iframe.src = "https://datawrapper.dwcdn.net/2PmGg/1/";
+        } else if (response.index === 1) {
+          iframe.src = "https://datawrapper.dwcdn.net/91WTC/2/";
+        }
+      });
+  </script>
+
+</body>
 </html>
