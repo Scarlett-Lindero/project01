@@ -5,7 +5,7 @@
   <title>Semáforo de Saturación Obstétrica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Scrollama -->
+  <!-- Scrollama (JS para scrollytelling) -->
   <script src="https://unpkg.com/scrollama"></script>
 
   <style>
@@ -16,9 +16,8 @@
     }
     .container {
       display: flex;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 0;
     }
     .scroll-text {
       width: 40%;
@@ -40,17 +39,10 @@
       top: 2rem;
       padding: 2rem;
     }
-    .graphic iframe {
+    .graphic iframe, .graphic img {
       width: 100%;
-      height: 450px;
+      height: 400px;
       border: none;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      margin-top: 3rem;
-      padding: 2rem;
-      color: #444;
     }
   </style>
 </head>
@@ -58,24 +50,18 @@
 
   <div class="container">
     <div class="scroll-text">
-      <div class="step" data-step="1">
-        <strong>Una de cada dos cesáreas fue de urgencia.</strong><br>
-        El 52.1 % de las cesáreas registradas en 2024 fueron clasificadas como “urgentes”, lo cual puede indicar saturación en la atención obstétrica.
-      </div>
-      <div class="step" data-step="2">
-        <strong>Faltan gineco-obstetras en algunos estados.</strong><br>
-        En ciertas entidades federativas, menos del 60% de los partos fueron atendidos por personal especializado.
-      </div>
+      <div class="step" data-step="1">Más del 50 % de las cesáreas en 2024 fueron clasificadas como “urgentes”.</div>
+      <div class="step" data-step="2">En algunos hospitales, ningún parto fue atendido por un gineco-obstetra.</div>
+      <div class="step" data-step="3">Estas situaciones pueden indicar una saturación crítica del sistema obstétrico.</div>
     </div>
 
     <div class="graphic">
-      <iframe id="viz" src="https://datawrapper.dwcdn.net/2PmGg/1/"></iframe>
+      <div id="graphic-content">
+        <!-- Iframe que irá cambiando -->
+        <iframe id="viz" src="https://datawrapper.dwcdn.net/2PmGg/1/"></iframe>
+      </div>
     </div>
   </div>
-
-  <footer>
-    Hecho por Scarlett Lindero · La Cadera de Eva · 2025
-  </footer>
 
   <script>
     const scroller = scrollama();
@@ -91,14 +77,17 @@
         document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
         response.element.classList.add('active');
 
-        // Cambiar visualización según paso
+        // Cambia la visualización dependiendo del paso
         if (response.index === 0) {
           iframe.src = "https://datawrapper.dwcdn.net/2PmGg/1/";
         } else if (response.index === 1) {
-          iframe.src = "https://datawrapper.dwcdn.net/91WTC/2/";
+          iframe.src = "https://datawrapper.dwcdn.net/XXXX1/1/"; // Agrega otra si tienes más
+        } else if (response.index === 2) {
+          iframe.src = "https://datawrapper.dwcdn.net/XXXX2/1/"; // Otra más si aplica
         }
       });
   </script>
 
 </body>
 </html>
+
