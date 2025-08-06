@@ -11,37 +11,43 @@
     :root {
       --primary-color: #e68ea9;
       --text-color: #333;
-      --background-color: #fff;
+      --bg-page: #fde8ec; /* Fondo rosa claro */
+      --bg-sheet: #fff;
     }
 
     body {
       margin: 0;
       padding: 0;
-      color: var(--text-color);
-      background: var(--background-color);
+      background: var(--bg-page);
       font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text-color);
       line-height: 1.6;
     }
 
     .wrap {
       max-width: 700px;
-      margin: 0 auto;
-      padding: 2em 1em;
+      margin: 3em auto;
+      padding: 0 1em;
+    }
+
+    .sheet {
+      background: var(--bg-sheet);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2em;
     }
 
     h1 {
       font-family: 'Georgia', serif;
       font-size: 2.5rem;
-      margin-bottom: 0.5em;
       color: var(--primary-color);
-      text-align: center;
+      margin-bottom: 0.2em;
     }
 
     .byline {
       color: var(--primary-color);
       font-style: italic;
-      text-align: center;
-      margin-bottom: 2em;
+      margin-bottom: 1.5em;
     }
 
     h2 {
@@ -58,24 +64,23 @@
 
     blockquote {
       border-left: 4px solid var(--primary-color);
-      padding-left: 1em;
-      margin: 1.5em 0;
       background: #fdf3f5;
+      padding: 1em;
+      margin: 1.5em 0;
       color: #555;
       font-style: italic;
     }
 
     .graphic {
       margin: 2em 0;
-      width: 100%;
     }
 
     .graphic iframe {
-      display: block;
       width: 100%;
       height: auto;
       min-height: 400px;
       border: none;
+      display: block;
     }
 
     footer {
@@ -88,13 +93,17 @@
 </head>
 <body>
   <div class="wrap">
-    <article>
-      <h1>When Birth Becomes an Emergency</h1>
-      <p class="byline">Delivering Under Pressure in Mexico<br>By Scarlett Lindero</p>
+    <article class="sheet">
+      <header>
+        <h1>When Birth Becomes an Emergency</h1>
+        <p class="byline">Delivering Under Pressure in Mexico<br>By Scarlett Lindero</p>
+      </header>
 
-      <blockquote>
-        In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as “emergency procedures.”
-      </blockquote>
+      <section>
+        <blockquote>
+          In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as “emergency procedures.”
+        </blockquote>
+      </section>
 
       <section>
         <h2>Obstetric Care and Hospital Saturation</h2>
@@ -104,8 +113,8 @@
         </blockquote>
       </section>
 
-      <!-- Gráfica principal: usa tu ID de Datawrapper -->
       <section class="graphic">
+        <!-- Gráfica Datawrapper: reemplaza 2PmGg con tu ID -->
         <iframe title="Cesáreas en México" aria-label="chart" src="https://datawrapper.dwcdn.net/2PmGg/1/" scrolling="no"></iframe>
       </section>
 
@@ -119,11 +128,10 @@
   <script>
     window.addEventListener("message", function(event) {
       if (event.origin.includes("datawrapper")) {
-        var iframes = document.querySelectorAll('.graphic iframe');
-        iframes.forEach(function(iframe) {
+        document.querySelectorAll('iframe').forEach(function(iframe) {
           if (iframe.contentWindow === event.source) {
-            var height = event.data["datawrapper-height"];
-            iframe.style.height = height + "px";
+            var h = event.data['datawrapper-height'];
+            iframe.style.height = h + 'px';
           }
         });
       }
