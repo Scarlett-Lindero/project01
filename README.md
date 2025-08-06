@@ -1,65 +1,125 @@
-# Saturación obstétrica en México en 2024: ¿Por qué más de la mitad de los partos son cesáreas?
+# When Giving Birth Becomes an Emergency: Obstetric Saturation in Mexico (2024)
+
+In Mexico, childbirth is increasingly shaped by urgency—not choice.
+
+This investigation analyzes more than **1.4 million births registered in public hospitals in 2024** to reveal a silent crisis: a health system under pressure, where emergency C-sections are the norm, specialists are often absent, and the safety of birthing people is compromised.
+
+---
+
+## Why This Matters
+
+Maternal health is a human right. But in many hospitals across Mexico, that right is limited by systemic saturation.
+
+- Most births in 2024 ended in a C-section.
+- The majority of those were classified as **emergencies**.
+- Many happened **without OB/GYNs present**.
+- In some hospitals, there were **hundreds of births without any specialist at all**.
+
+This isn’t just about medical protocols—it’s about access, inequity, and life-threatening gaps in care.
+
+---
+
+## 🔍 Key Findings
+
+- **56.1%** of births in public hospitals were resolved via C-section.  
+- Of those, **52.1%** were labeled as *emergency surgeries*.  
+- **76 maternal deaths** were recorded during childbirth. Nearly half followed an emergency C-section.  
+- Over **28,000 cases** had *no record* of the professional who attended the birth.  
+- In several hospitals, **300+ births occurred without an OB/GYN**.
+
+---
+
+## Research Goals
+
+1. Quantify the prevalence of C-sections and their classification.  
+2. Identify states and hospitals with high rates of emergency interventions.  
+3. Detect facilities where births routinely happen without medical specialists.  
+4. Provide actionable evidence for public debate and policy around maternal care in Mexico.
+
+---
+
+## Methodology 
+
+This project is based on the **2024 Birth Database** from SINAC (National Birth Certificate Information System), published by the Mexican Ministry of Health.
+
+### Data Cleaning
+
+- Original dataset: **1,413,203 births**  
+- Excluded:
+  - Records with `CLUES = 9998` (non-official medical units)
+  - Rows with missing `CLUES` values
+- Final dataset: **1,338,905 complete birth records**  
+
+### Key Variables
+
+- `TIPO_PARTO` → Type of delivery (vaginal or C-section)  
+- `TIPOCESAREA` → Classification (scheduled, emergency, other)  
+- `TIPOMEDICOATENDIO` → Type of attending medical professional  
+- `SOBREVIVIOPARTO` → Whether the mother survived  
+- `CLUES` → Medical unit identifier  
+- `ENTIDADFEDERATIVAPARTO` → State of birth
+
+---
+
+## Visual Outputs
+
+This project produced a series of interactive and visual tools:
+
+- A **national map** showing hospitals with the highest saturation.
+- A **ranking of facilities** with the most non-specialist-attended births.
+- **State-level comparisons** of emergency C-section rates.
+- **Bar charts** of medical staff presence during maternal deaths.
+
+---
+
+## Tools Used
+
+- **Python & Pandas** – data processing and cleaning  
+- **Jupyter Notebook** – reproducible code and documentation  
+- **Datawrapper** – mapping and interactive visualizations  
+- **GitHub Pages** – for publishing the microsite  
+
+## Generated Datasets
+
+| File Name                                       | Description                                                              |
+|------------------------------------------------|--------------------------------------------------------------------------|
+| `dataset_nacimientos_2024.csv`                 | Cleaned birth records dataset                                            |
+| `tipo_parto_distribucion_2024_plot.csv`        | Delivery types (vaginal, emergency C-section, scheduled, etc.)          |
+| `porcentaje_total_cesareas_por_estado_ordenado_plot.csv` | C-section rates by state, ranked                                 |
+| `top_10_ranking_hospitales_plot.csv`           | Hospitals with the most births without OB/GYN                           |
+| `tipos_cesareas_mexico_2024_plot.csv`          | C-section classification totals and percentages                         |
+| `tipos_medico_muerte_materna_plot.csv`         | Maternal deaths by attending staff type                                 |
+| `hospitales_muertes_materna.csv`               | Hospitals with >2 maternal deaths                                        |
+| `muertes_maternas_por_tipo_parto.csv`          | Maternal deaths by delivery type                                        |
+
+---
+
+## Data Sources
+
+| File                                           | Description                                | Source                                     |
+|------------------------------------------------|--------------------------------------------|--------------------------------------------|
+| `Nacimientos_2024.csv`                         | Birth records for 2024 in Mexico           | SINAC – Ministry of Health *(local file)*  |
+| `sinac_catalogos_establecimientos_salud.xlsx`  | CLUES catalog of medical units             | SINAC – Ministry of Health *(local file)*  |
+
+> **Note:** Place both files in your project root before running the notebook.
+
+---
+
+## What’s Next
+
+- Add population data and hospital capacity to adjust C-section rates  
+- Build interactive maps by state and medical unit  
+- Compare trends with previous years (2020–2023)  
+- Integrate geographic and socioeconomic context into the analysis  
+
+---
+
+##  Author
+
+**Scarlett Lindero**  
+Investigative & Data Journalist | *La Cadera de Eva*  
+LEDE Fellow 2025 | Mexico City  
+
+This project is part of a larger effort to uncover structural issues in maternal care and give visibility to stories hidden in the data.
 
 
-## 1. Descripción del proyecto
-Este análisis utiliza los registros de nacimientos de 2024 del Sistema Nacional de Información en Salud (SINAC) de la Secretaría de Salud de México, así como el catálogo de unidades médicas (CLUES). 
-
-Se centra en:
-- Calcular la proporción nacional de cesáreas frente a partos vaginales.
-- Mapear la distribución de cesáreas por estado y hospital.
-- Evaluar la disponibilidad de gineco-obstetras en la atención de partos.
-- Analizar la mortalidad materna según el tipo de parto.
-- Generar insumos para el debate sobre políticas de salud materna y emergencias obstétricas.
-
-## 2. Fuentes de datos
-| Archivo                                      | Descripción                                         | Origen / Enlace                                           |
-|----------------------------------------------|-----------------------------------------------------|-----------------------------------------------------------|
-| `Nacimientos_2024.csv`                       | Registros de nacimientos en México, año 2024        | SINAC Secretaría de Salud (descarga local)                |
-| `sinac_catalogos_establecimientos_salud.xlsx`| Catálogo CLUES de unidades médicas                  | SINAC Secretaría de Salud (descarga local)                |
-
-> **Nota:** Descarga y coloca ambos archivos en la carpeta raíz del proyecto antes de ejecutar el notebook.
-
-## 3. Archivos generados
-Tras ejecutar el notebook, se exportan los siguientes CSV para visualización y análisis:
-
-- `dataset_nacimientos_2024.csv`: Base de datos depurada de nacimientos.  
-- `tipo_parto_distribucion_2024_plot.csv`: Distribución de partos por tipo (vaginal, cesárea urgente, cesárea programada, etc.).  
-- `porcentaje_total_cesareas_por_estado_ordenado_plot.csv`: Porcentaje de cesáreas por estado, ordenado de mayor a menor.  
-- `top_10_ranking_hospitales_plot.csv`: Top 10 de hospitales con más partos sin gineco-obstetra (números absolutos).  
-- `tipos_cesareas_mexico_2024_plot.csv`: Totales y porcentajes de las distintas categorías de cesárea.  
-- `tipos_medico_muerte_materna_plot.csv`: Distribución de muertes maternas según tipo de profesional presente.  
-- `hospitales_muertes_materna.csv`: Listado de hospitales con más de 2 muertes maternas registradas.  
-- `muertes_maternas_por_tipo_parto.csv`: Muertes maternas desagregadas por tipo de parto.  
-
-## 4. Metodología
-1. **Carga y limpieza de datos**: Se importan los CSV y XLSX; se renombran columnas, se homogenizan formatos y se eliminan valores faltantes irrelevantes.  
-2. **Cálculo de tasas y proporciones**:  
-   - Tasa nacional de cesáreas frente a partos vaginales.  
-   - Porcentaje de cesáreas por estado.  
-3. **Análisis de saturación de gineco-obstetras**:  
-   - Identificación de partos sin gineco-obstetra.  
-   - Creación de un semáforo (rojo/amarillo/verde) por hospital según umbrales predefinidos.  
-4. **Exploración de mortalidad materna**:  
-   - Filtrado de muertes maternas (`SOBREVIVIO_PARTO_CVE == 2`).  
-   - Conteo y porcentaje por tipo de parto y por profesional responsable.  
-5. **Exportación de resultados**: Generación de CSV listos para visualización en dashboards o mapas.  
-
-## 5. Hallazgos clave
-- **Tasa nacional de cesáreas:** Más del 56% de los partos en 2024 fueron cesáreas, superando el umbral recomendado por la OMS (15%).  
-- **Variación por estado:** [Estado más alto]% en [Estado A] vs. [Estado más bajo]% en [Estado B].  
-- **Top 10 hospitales sin gineco-obstetra:** Hospital de la Mujer (Ciudad de México) lidera con 3,833 partos sin especialista.  
-- **Mortalidad materna:** El 48.7% de las muertes maternas ocurrieron tras una cesárea de urgencia, indicando posibles retrasos en la atención de emergencias.  
-
-
-## 6. Habilidades y herramientas utilizadas
-- Python (pandas, matplotlib, openpyxl)  
-- Limpieza y transformación de datos  
-- Análisis estadístico de tasas y proporciones  
-- Exportación de datasets para visualización  
-- Diseño de semáforo de riesgo obstétrico  
-
-## 7. Próximos pasos
-- Incorporar datos de población y capacidad instalada hospitalaria para ajustar tasas.  
-- Desarrollar mapas interactivos por estado y unidad médica.  
-- Comparar tendencias con años anteriores (2020–2023).  
-- Integrar análisis de factores socioeconómicos y geográficos.  
