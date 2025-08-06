@@ -1,55 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>When Birth Becomes an Emergency</title>
   <style>
     :root {
-      --bg-color: #ffe5e0; /* salmón clarito */
+      --bg-color: #ffe5e0; /* Salmón clarito */
       --text-color: #333;
       --primary-color: #E91E63;
-      --nav-width: 220px;
       --max-width: 700px;
-      --padding: 1rem;
+      --padding: 2rem;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      display: flex;
-      min-height: 100vh;
-      background: var(--bg-color);
       font-family: system-ui, sans-serif;
+      background: var(--bg-color);
       color: var(--text-color);
-    }
-    nav {
-      width: var(--nav-width);
-      background: var(--primary-color);
       padding: var(--padding);
-      position: sticky;
-      top: 0;
-      height: 100vh;
-    }
-    nav h1 {
-      font-size: 1.25rem;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-    nav a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
+      display: flex;
+      justify-content: center;
     }
     main {
-      flex: 1;
       max-width: var(--max-width);
+      width: 100%;
+      background: #fff;
       padding: var(--padding);
-      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
-    h1, h2 {
+    h1 {
       color: var(--primary-color);
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
     }
     p {
       margin-bottom: 1rem;
@@ -63,67 +52,46 @@
   </style>
 </head>
 <body>
-  <nav>
-    <h1>When Birth Becomes an Emergency</h1>
-    <a href="#intro">Introducción</a>
-    <a href="#system">Sistema que excluye</a>
-    <a href="#recycled">Diagnósticos</a>
-    <a href="#mortality">Mortalidad</a>
-    <a href="#midwives">Parteras</a>
-    <a href="#reports">Sin especialista</a>
-    <a href="#choice">Elección</a>
-    <a href="#change">Qué cambiar</a>
-  </nav>
   <main>
-    <section id="intro">
-      <h1>When Birth Becomes an Emergency</h1>
-      <h2>By Scarlett Lindero</h2>
-      <p>In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
-      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/2PmGg/3/" scrolling="no" frameborder="0" height="500" title="Emergency C-sections in Mexico 2024"></iframe>
-      <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
-    </section>
+    <h1>When Birth Becomes an Emergency</h1>
+    <h2>By Scarlett Lindero</h2>
+    <p>In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
+    <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/2PmGg/3/" scrolling="no" height="500" title="Emergency C-sections in Mexico 2024"></iframe>
+    <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
+    <p><em>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</em></p>
 
-    <section id="system">
-      <h2>A System That Centralizes and Excludes</h2>
-      <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second, composed of general hospitals, handles obstetric emergencies and more complex cases. The third includes highly specialized hospitals.</p>
-      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/91WTC/3/" scrolling="no" frameborder="0" height="450" title="C-section emergencies"></iframe>
-    </section>
+    <h2>A System That Centralizes and Excludes</h2>
+    <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second level, composed of general hospitals, handles obstetric emergencies and more complex cases. The third level includes highly specialized hospitals.</p>
+    <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/91WTC/3/" scrolling="no" height="450" title="One in two C-sections in Mexico were classified as emergencies"></iframe>
 
-    <section id="recycled">
-      <h2>Recycled Diagnoses, Conditioned Decisions</h2>
-      <p>Most emergency C-sections are based on common clinical diagnoses—like "fetal distress" or "cephalopelvic disproportion"—which, while possible, have become routine justifications for fast intervention.</p>
-    </section>
+    <h2>Recycled Diagnoses, Conditioned Decisions</h2>
+    <p>Most emergency C-sections are based on common clinical diagnoses—like "fetal distress" or "cephalopelvic disproportion"—which, while possible, have become routine justifications for fast intervention.</p>
 
-    <section id="mortality">
-      <h2>The Numbers Don’t Lower Mortality</h2>
-      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/HDJMb/2/" scrolling="no" frameborder="0" height="600" title="Choropleth of C-section rates"></iframe>
-    </section>
+    <h2>The Numbers Don’t Lower Mortality</h2>
+    <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/HDJMb/2/" scrolling="no" height="600" title="Choropleth of C-section rates"></iframe>
 
-    <section id="midwives">
-      <h2>The Marginalized Role of Midwives</h2>
-      <p>One of the most glaring absences in this model is that of professional midwives. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
-    </section>
+    <h2>The Marginalized Role of Midwives</h2>
+    <p>One of the most glaring absences in this model is that of professional midwives. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
 
-    <section id="reports">
-      <h2>Giving Birth Without a Specialist</h2>
-      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/xlb4j/1/" scrolling="no" frameborder="0" height="900" title="Births without specialist"></iframe>
-    </section>
+    <h2>Giving Birth Without a Specialist</h2>
+    <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/xlb4j/1/" scrolling="no" height="900" title="Births without specialist"></iframe>
 
-    <section id="choice">
-      <h2>When Choice Isn’t Really an Option</h2>
-      <p>Lack of information also shapes many women’s experience in the obstetric system. Few know the risks associated with C-sections—such as placenta accreta, future pregnancy complications, or anesthesia effects—and even fewer are told about the benefits of vaginal birth.</p>
-    </section>
+    <h2>When Choice Isn’t Really an Option</h2>
+    <p>Lack of information also shapes many women’s experience in the obstetric system. Few know the risks associated with C-sections—such as placenta accreta, future pregnancy complications, or anesthesia effects—and even fewer are told about the benefits of vaginal birth.</p>
 
-    <section id="change">
-      <h2>What Needs to Change</h2>
-      <ul>
-        <li>Strengthen primary care to manage uncomplicated births.</li>
-        <li>Bring midwives back into the public system.</li>
-        <li>Ensure safe, informed, and respectful births as a basic right.</li>
-        <li>Redesign hospitals to honor movement, privacy, and natural timing.</li>
-      </ul>
-    </section>
+    <h2>The Price of What’s Left Unspoken</h2>
+    <p>The routine use of C-sections comes at a high cost for the healthcare system—a cost rarely acknowledged. Neither are the long-term effects on newborns, such as their microbiome development, or the emotional and physical toll on women.</p>
+
+    <h2>What Needs to Change</h2>
+    <ul>
+      <li>Strengthen primary care to manage uncomplicated births.</li>
+      <li>Bring midwives back into the public system.</li>
+      <li>Ensure safe, informed, and respectful births as a basic right.</li>
+      <li>Redesign hospitals to honor movement, privacy, and the natural timing of birth.</li>
+      <li>Open a public conversation about the risks of normalizing surgery as the default.</li>
+    </ul>
+
+    <script src="https://static.datawrapper.de/embed.js"></script>
   </main>
-  <script src="https://static.datawrapper.de/embed.js"></script>
 </body>
 </html>
