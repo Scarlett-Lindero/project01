@@ -6,127 +6,140 @@
   <title>When Birth Becomes an Emergency</title>
   <style>
     :root {
+      --nav-width: 200px;
       --color-primary: #E91E63;
-      --color-text: #333;
-      --bg: #fff;
+      --text-color: #333;
+      --bg-color: #fff;
       --max-width: 700px;
     }
-    * { box-sizing: border-box; }
-    body, html {
-      margin: 0; padding: 0;
-      height: 100%; font-family: system-ui, sans-serif;
-      color: var(--color-text); background: var(--bg);
-      overflow: hidden;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      color: var(--text-color);
+      background: var(--bg-color);
+      overflow-x: hidden;
     }
-    .container { display: flex; height: 100%; }
+    /* Navegación fija */
     nav {
-      position: sticky; top: 0;
-      width: 200px; background: var(--color-primary);
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--nav-width);
+      height: 100vh;
+      background: var(--color-primary);
       padding: 1rem;
       overflow-y: auto;
     }
     nav a {
-      display: block; margin: 0.5rem 0;
-      color: #fff; text-decoration: none;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 0.5rem 0;
       font-size: 0.9rem;
     }
+    nav a:hover { text-decoration: underline; }
+    /* Contenido principal */
     main {
-      flex: 1; height: 100%; overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      padding: 0;
-    }
-    section {
-      scroll-snap-align: start;
-      min-height: 100vh;
+      margin-left: var(--nav-width);
       padding: 2rem;
       max-width: var(--max-width);
-      margin: auto;
+      margin-right: auto;
+      overflow-y: auto;
     }
-    h2 { color: var(--color-primary); margin-top: 0; }
-    p { margin: 1rem 0; line-height: 1.6; }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    p {
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
     iframe.datawrapper-chart {
-      width: 100%; border: none;
+      width: 100%;
+      min-width: 100%;
+      border: none;
       margin: 1rem 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <a href="#intro">Introducción</a>
-      <a href="#system">Sistema que excluye</a>
-      <a href="#recycled">Diagnósticos reciclados</a>
-      <a href="#mortality">Mortality</a>
-      <a href="#midwives">Parteras</a>
-      <a href="#specialist">Sin especialista</a>
-      <a href="#choice">Elección</a>
-      <a href="#price">Precio</a>
-      <a href="#change">Qué cambiar</a>
-    </nav>
-    <main>
-      <section id="intro">
-        <h2>Introducción</h2>
-        <p><strong>When Birth Becomes an Emergency: Delivering Under Pressure in Mexico</strong><br><em>By Scarlett Lindero</em></p>
-        <p>In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
-        <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/2PmGg/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
-        <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
-        <p><em>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</em></p>
-      </section>
-      <section id="system">
-        <h2>A System That Centralizes and Excludes</h2>
-        <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second level, composed of general hospitals, handles obstetric emergencies and more complex cases. The third level includes highly specialized hospitals.</p>
-        <p>Since 2010, public policy has focused on moving births to second-level hospitals, following international recommendations that frame them as safer. The National Strategy to Reduce Maternal Mortality shifted obstetric care to these hospitals, effectively disabling many first-level units—even those with trained personnel, proper equipment, and infrastructure.</p>
-        <p>The result is a saturated hospital system unable to support physiological birth. What was once an exception has become a tool for managing overcrowded hospitals.</p>
-        <p><em>"What Seguro Popular did was shut down the first level—it didn’t strengthen it. Now, hospitals are overrun with births that could be handled elsewhere," says Argüello.</em></p>
-      </section>
-      <section id="recycled">
-        <h2>Recycled Diagnoses, Conditioned Decisions</h2>
-        <p>Most emergency C-sections are based on common clinical diagnoses—like "fetal distress" or "cephalopelvic disproportion"—which, while possible, have become routine justifications for fast intervention.</p>
-        <p><em>"When they tell you, 'Your baby is suffering. We need to get them out now,' of course you say yes. Women agree. Families agree. No one wants to risk the baby’s life. But that’s not always a real emergency," Argüello warns.</em></p>
-        <p>Labor requires time, support, and continuity. But in overcrowded hospitals, the decision to operate often follows not medical urgency, but a logic of managing shifts and beds.</p>
-      </section>
-      <section id="mortality">
-        <h2>The Numbers Don’t Lower Mortality</h2>
-        <p>C-section rates vary across states, but all exceed the 15% threshold recommended by the WHO—and the national average of 56.1%. In Sinaloa (64.6%), Tlaxcala (63.4%), and Tamaulipas (63.3%), more than six in ten births were surgical. In Guerrero, Chiapas, and San Luis Potosí, rates fall to between 41% and 45%.</p>
-        <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/HDJMb/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
-        <p>In 2024, 76 maternal deaths were documented during childbirth. In 73.7% of cases, the delivery was handled by an OB-GYN; in 14.5%, by a general practitioner.</p>
-        <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/sHXuA/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
-        <p>Nearly half of these deaths (48.7%) occurred after an emergency C-section—the most lethal type of delivery recorded. Another 30.3% followed an unassisted vaginal birth, and 17.1% came after a scheduled C-section. One case was reported as "unspecified C-section," revealing inconsistencies in how care is documented.</p>
-      </section>
-      <section id="midwives">
-        <h2>The Marginalized Role of Midwives</h2>
-        <p>One of the most glaring absences in this model is that of professional midwives. Despite their training and experience, they’ve been systematically excluded from the public health system. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
-        <p><em>"Midwives are not a backup option. They’re essential to easing hospital overload and returning childbirth to a space where women can choose. But they were pushed out without considering the consequences," Argüello points out.</em></p>
-        <p>One exception is the public hospital of Tepetlixpa, in the State of Mexico, where reintegrating professional midwives has reduced medicalization and improved outcomes.</p>
-      </section>
-      <section id="specialist">
-        <h2>Giving Birth Without a Specialist</h2>
-        <p>The data also shows that in many hospitals, hundreds—or even thousands—of births were attended without a certified OB-GYN. The most extreme case is the Hospital de la Mujer in Mexico City, where 3,833 births occurred without a specialist. In hospitals across Guerrero and Puebla, the number exceeds 1,800.</p>
-        <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/xlb4j/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
-        <p>In many cases, deliveries were handled by general practitioners, medical residents, or unidentified personnel.</p>
-      </section>
-      <section id="choice">
-        <h2>When Choice Isn’t Really an Option</h2>
-        <p>Lack of information also shapes many women’s experience in the obstetric system. Few know the risks associated with C-sections—such as placenta accreta, future pregnancy complications, or anesthesia effects—and even fewer are told about the benefits of vaginal birth.</p>
-        <p><em>"There's talk of empowerment, especially in private care—that women can choose when and how to give birth. But if that choice isn’t backed by full information, it’s just the illusion of freedom," says Argüello.</em></p>
-      </section>
-      <section id="price">
-        <h2>The Price of What’s Left Unspoken</h2>
-        <p>The routine use of C-sections comes at a high cost for the healthcare system—a cost rarely acknowledged. Neither are the long-term effects on newborns, such as their microbiome development, or the emotional and physical toll on women.</p>
-        <p><em>"We need to restore birth as a health experience, not just a clinical procedure. Today, women are giving birth in a system that pressures them, silences them, and operates on them," Argüello concludes.</em></p>
-      </section>
-      <section id="change">
-        <h2>What Needs to Change</h2>
-        <ul>
-          <li>Strengthen primary care to manage uncomplicated births.</li>
-          <li>Bring midwives back into the public system.</li>
-          <li>Ensure safe, informed, and respectful births as a basic right.</li>
-          <li>Redesign hospitals to honor movement, privacy, and the natural timing of birth.</li>
-          <li>Open a public conversation about the risks of normalizing surgery as the default.</li>
-        </ul>
-      </section>
-    </main>
-  </div>
+  <nav>
+    <a href="#intro">Introducción</a>
+    <a href="#system">Sistema que excluye</a>
+    <a href="#recycled">Diagnósticos reciclados</a>
+    <a href="#mortality">Mortality</a>
+    <a href="#midwives">Parteras</a>
+    <a href="#specialist">Sin especialista</a>
+    <a href="#choice">Elección</a>
+    <a href="#price">Precio</a>
+    <a href="#change">Qué cambiar</a>
+  </nav>
+  <main>
+    <section id="intro">
+      <h2>Introducción</h2>
+      <p><strong>When Birth Becomes an Emergency: Delivering Under Pressure in Mexico</strong><br><em>By Scarlett Lindero</em></p>
+      <p>In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
+      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/2PmGg/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
+      <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
+      <p><em>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</em></p>
+    </section>
+    <section id="system">
+      <h2>A System That Centralizes and Excludes</h2>
+      <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second level, composed of general hospitals, handles obstetric emergencies and more complex cases. The third level includes highly specialized hospitals.</p>
+      <p>Since 2010, public policy has focused on moving births to second-level hospitals, following international recommendations that frame them as safer. The National Strategy to Reduce Maternal Mortality shifted obstetric care to these hospitals, effectively disabling many first-level units—even those with trained personnel, proper equipment, and infrastructure.</p>
+      <p>The result is a saturated hospital system unable to support physiological birth. What was once an exception has become a tool for managing overcrowded hospitals.</p>
+      <p><em>"What Seguro Popular did was shut down the first level—it didn’t strengthen it. Now, hospitals are overrun with births that could be handled elsewhere," says Argüello.</em></p>
+    </section>
+    <section id="recycled">
+      <h2>Recycled Diagnoses, Conditioned Decisions</h2>
+      <p>Most emergency C-sections are based on common clinical diagnoses—like "fetal distress" or "cephalopelvic disproportion"—which, while possible, have become routine justifications for fast intervention.</p>
+      <p><em>"When they tell you, 'Your baby is suffering. We need to get them out now,' of course you say yes. Women agree. Families agree. No one wants to risk the baby’s life. But that’s not always a real emergency," Argüello warns.</p>
+      <p>Labor requires time, support, and continuity. But in overcrowded hospitals, the decision to operate often follows not medical urgency, but a logic of managing shifts and beds.</p>
+    </section>
+    <section id="mortality">
+      <h2>The Numbers Don’t Lower Mortality</h2>
+      <p>C-section rates vary across states, but all exceed the 15% threshold recommended by the WHO—and the national average of 56.1%. In Sinaloa (64.6%), Tlaxcala (63.4%), and Tamaulipas (63.3%), more than six in ten births were surgical. In Guerrero, Chiapas, and San Luis Potosí, rates fall to between 41% and 45%.</p>
+      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/HDJMb/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
+      <p>In 2024, 76 maternal deaths were documented during childbirth. In 73.7% of cases, the delivery was handled by an OB-GYN; in 14.5%, by a general practitioner.</p>
+      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/sHXuA/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
+      <p>Nearly half of these deaths (48.7%) occurred after an emergency C-section—the most lethal type of delivery recorded. Another 30.3% followed an unassisted vaginal birth, and 17.1% came after a scheduled C-section. One case was reported as "unspecified C-section," revealing inconsistencies in how care is documented.</p>
+    </section>
+    <section id="midwives">
+      <h2>The Marginalized Role of Midwives</h2>
+      <p>One of the most glaring absences in this model is that of professional midwives. Despite their training and experience, they’ve been systematically excluded from the public health system. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
+      <p><em>"Midwives are not a backup option. They’re essential to easing hospital overload and returning childbirth to a space where women can choose. But they were pushed out without considering the consequences," Argüello points out.</em></p>
+      <p>One exception is the public hospital of Tepetlixpa, in the State of Mexico, where reintegrating professional midwives has reduced medicalization and improved outcomes.</p>
+    </section>
+    <section id="specialist">
+      <h2>Giving Birth Without a Specialist</h2>
+      <p>The data also shows that in many hospitals, hundreds—or even thousands—of births were attended without a certified OB-GYN. The most extreme case is the Hospital de la Mujer in Mexico City, where 3,833 births occurred without a specialist. In hospitals across Guerrero and Puebla, the number exceeds 1,800.</p>
+      <iframe class="datawrapper-chart" src="https://datawrapper.dwcdn.net/xlb4j/1/" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
+      <p>In many cases, deliveries were handled by general practitioners, medical residents, or unidentified personnel.</p>
+    </section>
+    <section id="choice">
+      <h2>When Choice Isn’t Really an Option</h2>
+      <p>Lack of information also shapes many women’s experience in the obstetric system. Few know the risks associated with C-sections—such as placenta accreta, future pregnancy complications, or anesthesia effects—and even fewer are told about the benefits of vaginal birth.</p>
+      <p><em>"There's talk of empowerment, especially in private care—that women can choose when and how to give birth. But if that choice isn’t backed by full information, it’s just the illusion of freedom," says Argüello.</em></p>
+    </section>
+    <section id="price">
+      <h2>The Price of What’s Left Unspoken</h2>
+      <p>The routine use of C-sections comes at a high cost for the healthcare system—a cost rarely acknowledged. Neither are the long-term effects on newborns, such as their microbiome development, or the emotional and physical toll on women.</p>
+      <p><em>"We need to restore birth as a health experience, not just a clinical procedure. Today, women are giving birth in a system that pressures them, silences them, and operates on them," Argüello concludes.</em></p>
+    </section>
+    <section id="change">
+      <h2>What Needs to Change</h2>
+      <ul>
+        <li>Strengthen primary care to manage uncomplicated births.</li>
+        <li>Bring midwives back into the public system.</li>
+        <li>Ensure safe, informed, and respectful births as a basic right.</li>
+        <li>Redesign hospitals to honor movement, privacy, and the natural timing of birth.</li>
+        <li>Open a public conversation about the risks of normalizing surgery as the default.</li>
+      </ul>
+    </section>
+  </main>
   <script src="https://static.datawrapper.de/embed.js"></script>
 </body>
 </html>
