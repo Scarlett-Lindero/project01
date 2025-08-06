@@ -9,77 +9,89 @@
   <style>
     /* Colores personalizados */
     :root {
-      --primary-color: #e68ea9;   /* Rosa para títulos y destacados */
+      --primary-color: #e68ea9;
       --text-color: #333;
       --background-color: #fff;
     }
 
     body {
+      margin: 0;
+      padding: 0;
       color: var(--text-color);
       background: var(--background-color);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
     }
 
-    h1, h2, h3 {
-      color: var(--primary-color);
+    .wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2em 1em;
     }
 
     h1 {
       font-family: 'Georgia', serif;
       font-size: 2.5rem;
       margin-bottom: 0.5em;
-    }
-
-    h2 {
-      font-family: 'Georgia', serif;
-      font-size: 1.75rem;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
+      color: var(--primary-color);
+      text-align: center;
     }
 
     .byline {
       color: var(--primary-color);
       font-style: italic;
+      text-align: center;
       margin-bottom: 2em;
     }
 
-    /* Cita destacada */
+    h2 {
+      font-family: 'Georgia', serif;
+      font-size: 1.75rem;
+      color: var(--primary-color);
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
     blockquote {
       border-left: 4px solid var(--primary-color);
       padding-left: 1em;
       margin: 1.5em 0;
-      color: #555;
       background: #fdf3f5;
+      color: #555;
+      font-style: italic;
     }
 
-    /* Gráficas responsivas */
     .graphic {
-      width: 100% !important;
-      max-width: 100% !important;
       margin: 2em 0;
     }
 
-    /* Estilos de Datawrapper iframe */
     .graphic iframe {
-      width: 100% !important;
-      height: auto !important;
-      min-height: 400px;
+      width: 100%;
+      height: 400px;
       border: none;
+    }
+
+    footer {
+      font-size: 0.875rem;
+      color: #777;
+      margin-top: 3em;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <article class="sheet">
-      <header>
-        <h1>When Birth Becomes an Emergency</h1>
-        <p class="byline">Delivering Under Pressure in Mexico<br>By Scarlett Lindero</p>
-      </header>
+    <article>
+      <h1>When Birth Becomes an Emergency</h1>
+      <p class="byline">Delivering Under Pressure in Mexico<br>By Scarlett Lindero</p>
 
-      <section>
-        <blockquote>
-          In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as “emergency procedures.”
-        </blockquote>
-      </section>
+      <blockquote>
+        In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as “emergency procedures.”
+      </blockquote>
 
       <section>
         <h2>Obstetric Care and Hospital Saturation</h2>
@@ -89,14 +101,14 @@
         </blockquote>
       </section>
 
-      <!-- Embeds de Datawrapper -->
       <section class="graphic">
-        <!-- Reemplaza XXXXX con el ID de tu gráfica Datawrapper -->
-        <iframe title="Cesáreas en México" aria-label="chart" id="datawrapper-chart-XXXXX" src="https://datawrapper.dwcdn.net/XXXXX/1/" scrolling="no"></iframe>
+        <!-- Datawrapper Graphic 1 -->
+        <iframe title="Cesáreas en México" aria-label="chart" src="https://datawrapper.dwcdn.net/XXXXX/1/" scrolling="no"></iframe>
       </section>
 
       <section class="graphic">
-        <iframe title="Mapa de saturación hospitalaria" aria-label="chart" id="datawrapper-chart-YYYYY" src="https://datawrapper.dwcdn.net/YYYYY/1/" scrolling="no"></iframe>
+        <!-- Datawrapper Graphic 2 -->
+        <iframe title="Mapa de Saturación Hospitalaria" aria-label="chart" src="https://datawrapper.dwcdn.net/YYYYY/1/" scrolling="no"></iframe>
       </section>
 
       <footer>
@@ -105,11 +117,11 @@
     </article>
   </div>
 
-  <!-- Script de Datawrapper para ajuste responsivo -->
-  <script type="text/javascript">
+  <!-- Datawrapper Responsivity Script -->
+  <script>
     window.addEventListener("message", function(event) {
       if (event.origin.includes("datawrapper")) {
-        var iframes = document.querySelectorAll('iframe');
+        var iframes = document.getElementsByTagName('iframe');
         for (var i = 0; i < iframes.length; i++) {
           if (iframes[i].contentWindow === event.source) {
             var height = parseInt(event.data["datawrapper-height"]);
