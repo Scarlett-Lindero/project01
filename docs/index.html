@@ -4,90 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>When Birth Becomes an Emergency</title>
-  <!-- Fuente Inter desde Google Fonts -->
+  <!-- Fuente Inter para tipografía profesional -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #ffe5e0;               /* Salmón clarito */
-      --card-bg: #ffffff;
-      --text-color: #222222;
-      --primary-color: #E91E63;
-      --max-width: 700px;
-      --padding: 2rem;
-      --card-radius: 4px;
-      --card-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      --bg: #ffe5e0;             /* Salmón clarito de fondo */
+      --fg: #222222;             /* Texto oscuro para legibilidad */
+      --primary: #E91E63;        /* Color principal (rosa fuerte) */
+      --maxW: 700px;             /* Ancho máximo del contenido */
+      --pad: 1.5rem;             /* Espaciado interno */
+      --radius: 4px;             /* Bordes redondeados */
+      --shadow: 0 2px 4px rgba(0,0,0,0.08); /* Sombra suave */
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
+      margin: 0;
+      padding: var(--pad);
+      background: var(--bg);
       font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      padding: var(--padding);
+      color: var(--fg);
       display: flex;
       justify-content: center;
     }
-    main {
-      background: var(--card-bg);
-      max-width: var(--max-width);
+    article {
       width: 100%;
-      padding: var(--padding);
-      border-radius: var(--card-radius);
-      box-shadow: var(--card-shadow);
+      max-width: var(--maxW);
+      background: #fff;
+      padding: var(--pad);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
     h1 {
-      color: var(--primary-color);
       font-size: 2rem;
-      margin-bottom: 1rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
     }
     h2 {
-      color: var(--primary-color);
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin: 2rem 0 1rem;
+      font-weight: 600;
     }
     p {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       line-height: 1.6;
     }
     blockquote {
       margin: 1.5rem 0;
-      padding: 1rem 1.5rem;
+      padding: 1rem;
       background: #f9f0f2;
-      border-left: 4px solid var(--primary-color);
+      border-left: 4px solid var(--primary);
       font-style: italic;
       color: #444;
     }
     iframe.datawrapper-chart {
-      display: block;
       width: 100%;
-      min-width: 100%;
       border: none;
       margin: 2rem 0;
       loading: lazy;
     }
-    @media (max-width: 600px) {
+    @media (max-width:600px) {
       body { padding: 1rem; }
-      main { padding: 1rem; }
+      article { padding: 1rem; }
       h1 { font-size: 1.5rem; }
-      h2 { font-size: 1.25rem; }
+      h2 { font-size: 1rem; margin: 1.5rem 0 0.75rem; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>When Birth Becomes an Emergency</h1>
-    <h2>By Scarlett Lindero</h2>
+  <article>
+    <h1>When Birth Becomes an Emergency: Delivering Under Pressure in Mexico</h1>
+    <p><em>By Scarlett Lindero</em></p>
+
     <p>In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
     <iframe
       class="datawrapper-chart"
       src="https://datawrapper.dwcdn.net/2PmGg/3/"
       scrolling="no"
       frameborder="0"
-      loading="lazy"
-      title="Emergency C-sections in Mexico 2024">
+      title="Six in ten births in Mexico are by C-section"
+      loading="lazy">
     </iframe>
+
     <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
     <blockquote>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</blockquote>
 
@@ -98,8 +99,8 @@
       src="https://datawrapper.dwcdn.net/91WTC/3/"
       scrolling="no"
       frameborder="0"
-      loading="lazy"
-      title="One in two C-sections in Mexico were classified as emergencies">
+      title="One in two C-sections in Mexico were classified as emergencies"
+      loading="lazy">
     </iframe>
 
     <h2>Recycled Diagnoses, Conditioned Decisions</h2>
@@ -111,12 +112,22 @@
       src="https://datawrapper.dwcdn.net/HDJMb/2/"
       scrolling="no"
       frameborder="0"
-      loading="lazy"
-      title="Choropleth of C-section rates">
+      title="C-sections are most common in Sinaloa, Tlaxcala, and Tamaulipas"
+      loading="lazy">
+    </iframe>
+
+    <p>In 2024, 76 maternal deaths were documented during childbirth. In 73.7% of cases, the delivery was handled by an OB-GYN; in 14.5%, by a general practitioner.</p>
+    <iframe
+      class="datawrapper-chart"
+      src="https://datawrapper.dwcdn.net/sHXuA/1/"
+      scrolling="no"
+      frameborder="0"
+      title="OB-GYNs attended most maternal deaths during childbirth in 2024"
+      loading="lazy">
     </iframe>
 
     <h2>The Marginalized Role of Midwives</h2>
-    <p>One of the most glaring absences in this model is that of professional midwives. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
+    <p>One of the most glaring absences in this model is that of professional midwives. Despite their training and experience, they’ve been systematically excluded from the public health system. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
 
     <h2>Giving Birth Without a Specialist</h2>
     <iframe
@@ -124,8 +135,8 @@
       src="https://datawrapper.dwcdn.net/xlb4j/1/"
       scrolling="no"
       frameborder="0"
-      loading="lazy"
-      title="Births without specialist">
+      title="Public hospitals with the highest number of births without an OB-GYN in Mexico (2024)"
+      loading="lazy">
     </iframe>
 
     <h2>When Choice Isn’t Really an Option</h2>
@@ -143,8 +154,8 @@
       <li>Open a public conversation about the risks of normalizing surgery as the default.</li>
     </ul>
 
-    <!-- Script de Datawrapper para ajustar alturas -->
+    <!-- Script oficial de Datawrapper, solo una vez -->
     <script src="https://static.datawrapper.de/embed.js"></script>
-  </main>
+  </article>
 </body>
 </html>
