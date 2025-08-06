@@ -1,142 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>When Birth Becomes an Emergency</title>
+  <!-- Mapbox GL CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
   <style>
-    /* Variables de colores: reemplaza con tus hex codes */
-    :root {
-      --color-bg: #ffffff;
-      --color-text: #333333;
-      --color-primary: /* #E91E63 (ejemplo: rosa principal) */;
-      --color-secondary: /* #FFCDD2 (ejemplo: rosa claro) */;
-      --max-width: 800px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-    }
-    .container { display: flex; }
-    nav {
-      position: sticky;
-      top: 0;
-      width: 220px;
-      height: 100vh;
-      background-color: var(--color-primary);
-      padding: 1.5rem;
-      overflow-y: auto;
-    }
-    nav h2 { color: #fff; margin-bottom: 1rem; font-size: 1.2rem; }
-    nav a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin: 0.5rem 0;
-      font-size: 1rem;
-    }
-    nav a:hover { text-decoration: underline; }
-    main {
-      padding: 2rem;
-      max-width: var(--max-width);
-      flex: 1;
-      margin: 0 auto;
-    }
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary); }
-    h2 { font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--color-primary); }
-    p { margin-bottom: 1rem; }
-    blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 4px solid var(--color-secondary); color: #555; }
-    ul { margin: 1rem 0 2rem 1.5rem; }
-    iframe.datawrapper-chart {
-      width: 100%;
-      border: none;
-      margin: 2rem 0;
-    }
-    @media (max-width: 768px) {
-      .container { flex-direction: column; }
-      nav { width: 100%; height: auto; }
-    }
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: system-ui, sans-serif; }
+    #story { display: flex; height: 100%; }
+    #map { position: sticky; top: 0; flex: 1; }
+    #scrolly { flex: 1; overflow-y: scroll; padding: 2rem; }
+    .step { margin: 0 auto 4rem; max-width: 600px; }
+    .step h2 { margin-bottom: 0.5rem; color: #E91E63; }
+    .step p { line-height: 1.6; margin-bottom: 1rem; }
+    .step.is-active h2 { text-decoration: underline; }
+    iframe.datawrapper-chart { width: 100%; border: none; margin: 1rem 0; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <h2>Índice</h2>
-      <a href="#intro">Introducción</a>
-      <a href="#system">Un sistema que centraliza y excluye</a>
-      <a href="#recycled">Diagnósticos reciclados</a>
-      <a href="#mortality">Las cifras no reducen la mortalidad</a>
-      <a href="#midwives">El rol excluido de las parteras</a>
-      <a href="#specialist">Sin especialista</a>
-      <a href="#choice">Cuando la elección no es opción</a>
-      <a href="#price">El precio de lo no dicho</a>
-      <a href="#change">Qué debe cambiar</a>
-    </nav>
-    <main>
-      <section id="intro">
-        <h1>When Birth Becomes an Emergency: Delivering Under Pressure in Mexico</h1>
+  <div id="story">
+    <div id="map"></div>
+    <div id="scrolly">
+      <div class="step" data-lat="19.43" data-lng="-99.13" data-zoom="5">
+        <h2>Introducción</h2>
+        <p><strong>When Birth Becomes an Emergency: Delivering Under Pressure in Mexico</strong></p>
         <p><em>By Scarlett Lindero</em></p>
         <p>In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
         <iframe class="datawrapper-chart" src="https://www.datawrapper.de/_/2PmGg/" scrolling="no"></iframe>
         <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
-        <blockquote>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</blockquote>
-      </section>
+        <p><em>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</em></p>
+      </div>
 
-      <section id="system">
+      <div class="step" data-lat="19.57" data-lng="-98.83" data-zoom="6">
         <h2>A System That Centralizes and Excludes</h2>
         <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second level, composed of general hospitals, handles obstetric emergencies and more complex cases. The third level includes highly specialized hospitals.</p>
         <p>Since 2010, public policy has focused on moving births to second-level hospitals, following international recommendations that frame them as safer. The National Strategy to Reduce Maternal Mortality shifted obstetric care to these hospitals, effectively disabling many first-level units—even those with trained personnel, proper equipment, and infrastructure.</p>
-        <p>The result is a saturated hospital system unable to support physiological birth. What was once an exception has become a tool for managing overcrowded hospitals.</p>
-        <blockquote>"What Seguro Popular did was shut down the first level—it didn’t strengthen it. Now, hospitals are overrun with births that could be handled elsewhere," says Argüello.</blockquote>
-      </section>
+        <p>What was once an exception has become a tool for managing overcrowded hospitals.</p>
+        <p><em>"What Seguro Popular did was shut down the first level—it didn’t strengthen it. Now, hospitals are overrun with births that could be handled elsewhere," says Argüello.</em></p>
+      </div>
 
-      <section id="recycled">
+      <div class="step" data-lat="19.43" data-lng="-99.13" data-zoom="6">
         <h2>Recycled Diagnoses, Conditioned Decisions</h2>
         <p>Most emergency C-sections are based on common clinical diagnoses—like "fetal distress" or "cephalopelvic disproportion"—which, while possible, have become routine justifications for fast intervention.</p>
-        <blockquote>"When they tell you, 'Your baby is suffering. We need to get them out now,' of course you say yes. Women agree. Families agree. No one wants to risk the baby’s life. But that’s not always a real emergency," Argüello warns.</blockquote>
+        <p><em>"When they tell you, 'Your baby is suffering. We need to get them out now,' of course you say yes. Women agree. Families agree. No one wants to risk the baby’s life. But that’s not always a real emergency," Argüello warns.</em></p>
         <p>Labor requires time, support, and continuity. But in overcrowded hospitals, the decision to operate often follows not medical urgency, but a logic of managing shifts and beds.</p>
-      </section>
+      </div>
 
-      <section id="mortality">
+      <div class="step" data-lat="23.63" data-lng="-102.55" data-zoom="5">
         <h2>The Numbers Don’t Lower Mortality</h2>
         <p>C-section rates vary across states, but all exceed the 15% threshold recommended by the WHO—and the national average of 56.1%. In Sinaloa (64.6%), Tlaxcala (63.4%), and Tamaulipas (63.3%), more than six in ten births were surgical. In Guerrero, Chiapas, and San Luis Potosí, rates fall to between 41% and 45%.</p>
         <iframe class="datawrapper-chart" src="https://www.datawrapper.de/_/HDJMb/" scrolling="no"></iframe>
         <p>In 2024, 76 maternal deaths were documented during childbirth. In 73.7% of cases, the delivery was handled by an OB-GYN; in 14.5%, by a general practitioner.</p>
         <iframe class="datawrapper-chart" src="https://www.datawrapper.de/_/sHXuA/" scrolling="no"></iframe>
-        <p>Nearly half of these deaths (48.7%) occurred after an emergency C-section—the most lethal type of delivery recorded. Another 30.3% followed an unassisted vaginal birth, and 17.1% came after a scheduled C-section. One case was reported as "unspecified C-section," revealing inconsistencies in how care is documented.</p>
-        <blockquote>"The national strategy assumed that having a trained professional at every birth would reduce mortality. But it didn’t. Even in Chiapas, where nearly all births are attended by medical staff, the mortality rate remains high. The quality of care doesn’t depend only on who attends—it depends on the system that surrounds them," says Argüello.</blockquote>
-      </section>
+        <p>Nearly half of these deaths (48.7%) occurred after an emergency C-section—the most lethal type of delivery recorded. Another 30.3% followed an unassisted vaginal birth, and 17.1% came after a scheduled C-section.</p>
+        <p><em>"Even in Chiapas, where nearly all births are attended by medical staff, the mortality rate remains high. The quality of care doesn’t depend only on who attends—it depends on the system that surrounds them," says Argüello.</em></p>
+      </div>
 
-      <section id="midwives">
+      <div class="step" data-lat="19.27" data-lng="-99.66" data-zoom="6">
         <h2>The Marginalized Role of Midwives</h2>
         <p>One of the most glaring absences in this model is that of professional midwives. Despite their training and experience, they’ve been systematically excluded from the public health system. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
-        <blockquote>"Midwives are not a backup option. They’re essential to easing hospital overload and returning childbirth to a space where women can choose. But they were pushed out without considering the consequences," Argüello points out.</blockquote>
+        <p><em>"Midwives are not a backup option. They’re essential to easing hospital overload and returning childbirth to a space where women can choose. But they were pushed out without considering the consequences," Argüello points out.</em></p>
         <p>One exception is the public hospital of Tepetlixpa, in the State of Mexico, where reintegrating professional midwives has reduced medicalization and improved outcomes.</p>
-      </section>
+      </div>
 
-      <section id="specialist">
+      <div class="step" data-lat="19.43" data-lng="-99.13" data-zoom="6">
         <h2>Giving Birth Without a Specialist</h2>
         <p>The data also shows that in many hospitals, hundreds—or even thousands—of births were attended without a certified OB-GYN. The most extreme case is the Hospital de la Mujer in Mexico City, where 3,833 births occurred without a specialist. In hospitals across Guerrero and Puebla, the number exceeds 1,800.</p>
         <iframe class="datawrapper-chart" src="https://www.datawrapper.de/_/xlb4j/" scrolling="no"></iframe>
         <p>In many cases, deliveries were handled by general practitioners, medical residents, or unidentified personnel.</p>
-      </section>
+      </div>
 
-      <section id="choice">
+      <div class="step" data-lat="19.43" data-lng="-99.13" data-zoom="6">
         <h2>When Choice Isn’t Really an Option</h2>
         <p>Lack of information also shapes many women’s experience in the obstetric system. Few know the risks associated with C-sections—such as placenta accreta, future pregnancy complications, or anesthesia effects—and even fewer are told about the benefits of vaginal birth.</p>
-        <blockquote>"There's talk of empowerment, especially in private care—that women can choose when and how to give birth. But if that choice isn’t backed by full information, it’s just the illusion of freedom," says Argüello.</blockquote>
-      </section>
+        <p><em>"But if that choice isn’t backed by full information, it’s just the illusion of freedom," says Argüello.</em></p>
+      </div>
 
-      <section id="price">
+      <div class="step" data-lat="19.43" data-lng="-99.13" data-zoom="5">
         <h2>The Price of What’s Left Unspoken</h2>
-        <p>The routine use of C-sections comes at a high cost for the healthcare system—a cost rarely acknowledged. Neither are the long-term effects on newborns, such as their microbiome development, or the emotional and physical toll on women.</p>
-        <blockquote>"We need to restore birth as a health experience, not just a clinical procedure. Today, women are giving birth in a system that pressures them, silences them, and operates on them," Argüello concludes.</blockquote>
-      </section>
+        <p>The routine use of C-sections comes at a high cost for the healthcare system—a cost rarely acknowledged. Neither are long-term effects on newborns or the emotional and physical toll on women.</p>
+        <p><em>"We need to restore birth as a health experience, not just a clinical procedure. Today, women are giving birth in a system that pressures them, silences them, and operates on them," Argüello concludes.</em></p>
+      </div>
 
-      <section id="change">
+      <div class="step" data-lat="19.43" data-lng="-99.13" data-zoom="5">
         <h2>What Needs to Change</h2>
         <ul>
           <li>Strengthen primary care to manage uncomplicated births.</li>
@@ -145,9 +92,27 @@
           <li>Redesign hospitals to honor movement, privacy, and the natural timing of birth.</li>
           <li>Open a public conversation about the risks of normalizing surgery as the default.</li>
         </ul>
-        <p>In Mexico, birth has become a surgical intervention. As C-section rates continue to rise, the structural conditions that make them inevitable—saturation, misinformation, institutional design—remain unaddressed. Placing this debate at the center is not just a matter of public health: it’s a matter of rights.</p>
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
+
+  <!-- Mapbox GL JS y Scrollama -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2NhcmxldHQtbGluZGVybyIsImEiOiJjbWMxMmYwNXcwOGUwMmxxNGVkbnYzc2hhIn0.gPzp_hQRVXU_faEIWckvsw';
+    const map = new mapboxgl.Map({ container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: [-99.13, 19.43], zoom: 5 });
+    const scroller = scrollama();
+    scroller.setup({ step: '.step', offset: 0.6, progress: true })
+      .onStepEnter(response => {
+        document.querySelectorAll('.step').forEach(el => el.classList.remove('is-active'));
+        response.element.classList.add('is-active');
+        const lat = +response.element.dataset.lat;
+        const lng = +response.element.dataset.lng;
+        const zoom = +response.element.dataset.zoom;
+        map.flyTo({ center: [lng, lat], zoom: zoom, speed: 0.8 });
+      });
+    window.addEventListener('resize', scroller.resize);
+  </script>
 </body>
 </html>
