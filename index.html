@@ -67,11 +67,14 @@
 
     .graphic {
       margin: 2em 0;
+      width: 100%;
     }
 
     .graphic iframe {
+      display: block;
       width: 100%;
-      height: 400px;
+      height: auto;
+      min-height: 400px;
       border: none;
     }
 
@@ -101,17 +104,10 @@
         </blockquote>
       </section>
 
-      <!-- Gráfica principal: reemplaza 2PmGg por tu ID real -->
+      <!-- Gráfica principal: usa tu ID de Datawrapper -->
       <section class="graphic">
         <iframe title="Cesáreas en México" aria-label="chart" src="https://datawrapper.dwcdn.net/2PmGg/1/" scrolling="no"></iframe>
       </section>
-
-      <!-- Gráfica secundaria: elimina o reemplaza si no la tienes aún -->
-      <!--
-      <section class="graphic">
-        <iframe title="Mapa de Saturación Hospitalaria" aria-label="chart" src="https://datawrapper.dwcdn.net/TUSEGUNDOID/1/" scrolling="no"></iframe>
-      </section>
-      -->
 
       <footer>
         <p>Source: Sistema Nacional de Información en Salud (SINAC), 2024.</p>
@@ -123,13 +119,13 @@
   <script>
     window.addEventListener("message", function(event) {
       if (event.origin.includes("datawrapper")) {
-        var iframes = document.getElementsByTagName('iframe');
-        for (var i = 0; i < iframes.length; i++) {
-          if (iframes[i].contentWindow === event.source) {
-            var height = parseInt(event.data["datawrapper-height"]);
-            iframes[i].style.height = height + "px";
+        var iframes = document.querySelectorAll('.graphic iframe');
+        iframes.forEach(function(iframe) {
+          if (iframe.contentWindow === event.source) {
+            var height = event.data["datawrapper-height"];
+            iframe.style.height = height + "px";
           }
-        }
+        });
       }
     });
   </script>
