@@ -4,157 +4,140 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>When Birth Becomes an Emergency</title>
-  <!-- Fuente Inter para tipografía profesional -->
+  <!-- Fuentes estilo NYT: serif para titulares, sans para texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffe5e0;             /* Salmón clarito de fondo */
-      --fg: #222222;             /* Texto oscuro para legibilidad */
-      --primary: #E91E63;        /* Color principal (rosa fuerte) */
-      --maxW: 700px;             /* Ancho máximo del contenido */
-      --pad: 1.5rem;             /* Espaciado interno */
-      --radius: 4px;             /* Bordes redondeados */
-      --shadow: 0 2px 4px rgba(0,0,0,0.08); /* Sombra suave */
+      --bg: #f2e9e4;
+      --fg: #111;
+      --primary: #8b0000;
+      --maxW: 680px;
+      --pad: 1.5rem;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
       padding: var(--pad);
       background: var(--bg);
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Source Sans Pro', sans-serif;
       color: var(--fg);
       display: flex;
       justify-content: center;
     }
     article {
-      width: 100%;
       max-width: var(--maxW);
       background: #fff;
       padding: var(--pad);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      line-height: 1.7;
     }
     h1 {
-      font-size: 2rem;
-      color: var(--primary);
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
-      font-weight: 600;
+      color: var(--fg);
     }
     h2 {
-      font-size: 1.25rem;
-      color: var(--primary);
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
       margin: 2rem 0 1rem;
-      font-weight: 600;
+      color: var(--primary);
     }
-    p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
+    .subtitle {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+      color: #555;
+    }
+    .lead {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+    p { margin-bottom: 1.25rem; }
+    figure { margin: 2rem 0; }
+    figcaption {
+      font-size: 0.875rem;
+      color: #666;
+      text-align: center;
+      margin-top: 0.5rem;
     }
     blockquote {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      background: #f9f0f2;
-      border-left: 4px solid var(--primary);
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid var(--primary);
+      color: #333;
       font-style: italic;
-      color: #444;
     }
-    iframe.datawrapper-chart {
+    iframe {
       width: 100%;
       border: none;
-      margin: 2rem 0;
       loading: lazy;
     }
     @media (max-width:600px) {
       body { padding: 1rem; }
       article { padding: 1rem; }
-      h1 { font-size: 1.5rem; }
-      h2 { font-size: 1rem; margin: 1.5rem 0 0.75rem; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.25rem; }
     }
   </style>
 </head>
 <body>
   <article>
-    <h1>When Birth Becomes an Emergency: Delivering Under Pressure in Mexico</h1>
-    <p><em>By Scarlett Lindero</em></p>
+    <h1>When Birth Becomes an Emergency</h1>
+    <p class="subtitle">Delivering Under Pressure in Mexico</p>
+    <p class="lead">By Scarlett Lindero</p>
 
-    <p>In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
-    <iframe
-      class="datawrapper-chart"
-      src="https://datawrapper.dwcdn.net/2PmGg/3/"
-      scrolling="no"
-      frameborder="0"
-      title="Six in ten births in Mexico are by C-section"
-      loading="lazy">
-    </iframe>
+    <p class="lead">In Mexico, more and more women are giving birth without being able to choose how. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
+    <figure>
+      <iframe src="https://datawrapper.dwcdn.net/2PmGg/3/" title="Six in ten births in Mexico are by C-section" loading="lazy"></iframe>
+      <figcaption>Six in ten births in Mexico are by C-section (Datawrapper)</figcaption>
+    </figure>
 
     <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
     <blockquote>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</blockquote>
 
     <h2>A System That Centralizes and Excludes</h2>
-    <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second level, composed of general hospitals, handles obstetric emergencies and more complex cases. The third level includes highly specialized hospitals.</p>
-    <iframe
-      class="datawrapper-chart"
-      src="https://datawrapper.dwcdn.net/91WTC/3/"
-      scrolling="no"
-      frameborder="0"
-      title="One in two C-sections in Mexico were classified as emergencies"
-      loading="lazy">
-    </iframe>
+    <p>Mexico’s healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second level, composed of general hospitals, handles obstetric emergencies and more complex cases. The third level includes highly specialized hospitals.</p>
+    <figure>
+      <iframe src="https://datawrapper.dwcdn.net/91WTC/3/" title="One in two C-sections in Mexico were classified as emergencies" loading="lazy"></iframe>
+      <figcaption>One in two C-sections in Mexico were classified as emergencies (Datawrapper)</figcaption>
+    </figure>
 
     <h2>Recycled Diagnoses, Conditioned Decisions</h2>
     <p>Most emergency C-sections are based on common clinical diagnoses—like "fetal distress" or "cephalopelvic disproportion"—which, while possible, have become routine justifications for fast intervention.</p>
 
     <h2>The Numbers Don’t Lower Mortality</h2>
-    <iframe
-      class="datawrapper-chart"
-      src="https://datawrapper.dwcdn.net/HDJMb/2/"
-      scrolling="no"
-      frameborder="0"
-      title="C-sections are most common in Sinaloa, Tlaxcala, and Tamaulipas"
-      loading="lazy">
-    </iframe>
-
-    <p>In 2024, 76 maternal deaths were documented during childbirth. In 73.7% of cases, the delivery was handled by an OB-GYN; in 14.5%, by a general practitioner.</p>
-    <iframe
-      class="datawrapper-chart"
-      src="https://datawrapper.dwcdn.net/sHXuA/1/"
-      scrolling="no"
-      frameborder="0"
-      title="OB-GYNs attended most maternal deaths during childbirth in 2024"
-      loading="lazy">
-    </iframe>
+    <p>C-section rates vary across states, but all exceed the 15% threshold recommended by the WHO—and the national average of 56.1%. In Sinaloa (64.6%), Tlaxcala (63.4%), and Tamaulipas (63.3%), more than six in ten births were surgical. In Guerrero, Chiapas, and San Luis Potosí, rates fall to between 41% and 45%.</p>
+    <figure>
+      <iframe src="https://datawrapper.dwcdn.net/HDJMb/2/" title="C-sections are most common in Sinaloa, Tlaxcala, and Tamaulipas" loading="lazy"></iframe>
+      <figcaption>C-sections are most common in Sinaloa, Tlaxcala, and Tamaulipas (Datawrapper)</figcaption>
+    </figure>
 
     <h2>The Marginalized Role of Midwives</h2>
-    <p>One of the most glaring absences in this model is that of professional midwives. Despite their training and experience, they’ve been systematically excluded from the public health system. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
+    <p>One of the most glaring absences in this model is that of professional midwives. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
 
     <h2>Giving Birth Without a Specialist</h2>
-    <iframe
-      class="datawrapper-chart"
-      src="https://datawrapper.dwcdn.net/xlb4j/1/"
-      scrolling="no"
-      frameborder="0"
-      title="Public hospitals with the highest number of births without an OB-GYN in Mexico (2024)"
-      loading="lazy">
-    </iframe>
+    <figure>
+      <iframe src="https://datawrapper.dwcdn.net/xlb4j/1/" title="Public hospitals with the highest number of births without an OB-GYN in Mexico (2024)" loading="lazy"></iframe>
+      <figcaption>Public hospitals with the highest number of births without an OB-GYN in Mexico (2024) (Datawrapper)</figcaption>
+    </figure>
 
     <h2>When Choice Isn’t Really an Option</h2>
     <p>Lack of information also shapes many women’s experience in the obstetric system. Few know the risks associated with C-sections—such as placenta accreta, future pregnancy complications, or anesthesia effects—and even fewer are told about the benefits of vaginal birth.</p>
-
-    <h2>The Price of What’s Left Unspoken</h2>
-    <p>The routine use of C-sections comes at a high cost for the healthcare system—a cost rarely acknowledged. Neither are the long-term effects on newborns, such as their microbiome development, or the emotional and physical toll on women.</p>
 
     <h2>What Needs to Change</h2>
     <ul>
       <li>Strengthen primary care to manage uncomplicated births.</li>
       <li>Bring midwives back into the public system.</li>
       <li>Ensure safe, informed, and respectful births as a basic right.</li>
-      <li>Redesign hospitals to honor movement, privacy, and the natural timing of birth.</li>
+      <li>Redesign hospitals to honor movement, privacy, and natural timing.</li>
       <li>Open a public conversation about the risks of normalizing surgery as the default.</li>
     </ul>
 
-    <!-- Script oficial de Datawrapper, solo una vez -->
+    <!-- Script oficial de Datawrapper para ajustar alturas -->
     <script src="https://static.datawrapper.de/embed.js"></script>
   </article>
 </body>
