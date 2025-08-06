@@ -52,15 +52,6 @@ This project is based on the **2024 Birth Database** from SINAC (National Birth 
   - Rows with missing `CLUES` values
 - Final dataset: **1,338,905 complete birth records**  
 
-### Key Variables
-
-- `TIPO_PARTO` → Type of delivery (vaginal or C-section)  
-- `TIPOCESAREA` → Classification (scheduled, emergency, other)  
-- `TIPOMEDICOATENDIO` → Type of attending medical professional  
-- `SOBREVIVIOPARTO` → Whether the mother survived  
-- `CLUES` → Medical unit identifier  
-- `ENTIDADFEDERATIVAPARTO` → State of birth
-
 ---
 
 ## Visual Outputs
