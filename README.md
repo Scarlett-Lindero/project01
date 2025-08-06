@@ -4,7 +4,7 @@ In Mexico, childbirth is increasingly shaped by urgency—not choice.
 
 This investigation analyzes more than **1.4 million births registered in public hospitals in 2024** to reveal a silent crisis: a health system under pressure, where emergency C-sections are the norm, specialists are often absent, and the safety of birthing people is compromised.
 
-Project Page: https://scarlett-lindero.github.io/project01/
+🤰🏻 Project Page: https://scarlett-lindero.github.io/project01/
 
 ---
 
