@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>When Birth Becomes an Emergency</title>
   <!-- Soma Basic Template CSS -->
-  <link rel="stylesheet" href="https://jsoma.github.io/page-templates/basic/style.css">
+  <link rel="stylesheet" href="https://jsoma.github.io/page-templates/basic/style.css" />
   <style>
-    /* Colores personalizados */
+    /* Personalización de colores */
     :root {
       --primary-color: #e68ea9;
       --text-color: #333;
-      --bg-page: #fde8ec; /* Fondo rosa claro */
+      --bg-page: #fde8ec;
       --bg-sheet: #fff;
     }
 
@@ -24,17 +24,24 @@
       line-height: 1.6;
     }
 
-    .wrap {
-      max-width: 700px;
-      margin: 3em auto;
-      padding: 0 1em;
+    /* Ajuste de encabezado de sitio (navbar simple) */
+    .site-header {
+      background: var(--bg-sheet);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .site-title a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-family: 'Georgia', serif;
     }
 
+    /* Estilos adicionales en hoja */
     .sheet {
       background: var(--bg-sheet);
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       padding: 2em;
+      margin-bottom: 3em;
     }
 
     h1 {
@@ -42,12 +49,22 @@
       font-size: 2.5rem;
       color: var(--primary-color);
       margin-bottom: 0.2em;
+      text-align: center;
+    }
+
+    .meta {
+      font-size: 1.125rem;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 0.5em;
     }
 
     .byline {
-      color: var(--primary-color);
+      font-size: 0.875rem;
       font-style: italic;
-      margin-bottom: 1.5em;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 2em;
     }
 
     h2 {
@@ -77,27 +94,31 @@
 
     .graphic iframe {
       width: 100%;
-      height: auto;
       min-height: 400px;
       border: none;
       display: block;
     }
 
-    footer {
+    footer p {
       font-size: 0.875rem;
       color: #777;
-      margin-top: 3em;
       text-align: center;
+      margin-top: 3em;
     }
   </style>
 </head>
 <body>
+  <div class="site-header">
+    <div class="wrap">
+      <h3 class="site-title"><a href="/">La Cadera de Eva</a></h3>
+    </div>
+  </div>
+
   <div class="wrap">
     <article class="sheet">
-      <header>
-        <h1>When Birth Becomes an Emergency</h1>
-        <p class="byline">Delivering Under Pressure in Mexico<br>By Scarlett Lindero</p>
-      </header>
+      <h1>When Birth Becomes an Emergency</h1>
+      <p class="meta">Delivering Under Pressure in Mexico</p>
+      <p class="byline">By Scarlett Lindero</p>
 
       <section>
         <blockquote>
@@ -114,7 +135,7 @@
       </section>
 
       <section class="graphic">
-        <!-- Gráfica Datawrapper: reemplaza 2PmGg con tu ID -->
+        <!-- Gráfica Datawrapper -->
         <iframe title="Cesáreas en México" aria-label="chart" src="https://datawrapper.dwcdn.net/2PmGg/1/" scrolling="no"></iframe>
       </section>
 
@@ -126,8 +147,8 @@
 
   <!-- Script de responsividad de Datawrapper -->
   <script>
-    window.addEventListener("message", function(event) {
-      if (event.origin.includes("datawrapper")) {
+    window.addEventListener('message', function(event) {
+      if (event.origin.includes('datawrapper')) {
         document.querySelectorAll('iframe').forEach(function(iframe) {
           if (iframe.contentWindow === event.source) {
             var h = event.data['datawrapper-height'];
