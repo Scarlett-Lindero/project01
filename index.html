@@ -1,93 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Semáforo de Saturación Obstétrica</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Scrollama (JS para scrollytelling) -->
-  <script src="https://unpkg.com/scrollama"></script>
-
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background-color: #FFE4E1;
-    }
-    .container {
-      display: flex;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .scroll-text {
-      width: 40%;
-      padding: 2rem;
-    }
-    .scroll-text .step {
-      margin: 0 0 4rem 0;
-      padding: 1rem;
-      background: white;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .scroll-text .step.active {
-      background: #fce4ec;
-    }
-    .graphic {
-      width: 60%;
-      position: sticky;
-      top: 2rem;
-      padding: 2rem;
-    }
-    .graphic iframe, .graphic img {
-      width: 100%;
-      height: 400px;
-      border: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cuando nacer es una urgencia: el parto bajo presión en México</title>
+  <!-- Opcional: tu CSS propio o link a framework (Bulma, Bootstrap...) -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>When Birth Becomes an Emergency: Delivering Under Pressure in Mexico</h1>
+    <p>By Scarlett Lindero</p>
+  </header>
 
-  <div class="container">
-    <div class="scroll-text">
-      <div class="step" data-step="1">Más del 50 % de las cesáreas en 2024 fueron clasificadas como “urgentes”.</div>
-      <div class="step" data-step="2">En algunos hospitales, ningún parto fue atendido por un gineco-obstetra.</div>
-      <div class="step" data-step="3">Estas situaciones pueden indicar una saturación crítica del sistema obstétrico.</div>
-    </div>
+  <main>
+    <!-- Aquí van tus secciones de texto y gráficas -->
+  </main>
 
-    <div class="graphic">
-      <div id="graphic-content">
-        <!-- Iframe que irá cambiando -->
-        <iframe id="viz" src="https://datawrapper.dwcdn.net/2PmGg/1/"></iframe>
-      </div>
-    </div>
-  </div>
+  <footer>
+    <p>Fuente: SINAC 2024 | Visualizaciones: Datawrapper</p>
+  </footer>
 
-  <script>
-    const scroller = scrollama();
-    const iframe = document.getElementById("viz");
-
-    scroller
-      .setup({
-        step: ".step",
-        offset: 0.5,
-        debug: false
-      })
-      .onStepEnter(response => {
-        document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
-        response.element.classList.add('active');
-
-        // Cambia la visualización dependiendo del paso
-        if (response.index === 0) {
-          iframe.src = "https://datawrapper.dwcdn.net/2PmGg/1/";
-        } else if (response.index === 1) {
-          iframe.src = "https://datawrapper.dwcdn.net/XXXX1/1/"; // Agrega otra si tienes más
-        } else if (response.index === 2) {
-          iframe.src = "https://datawrapper.dwcdn.net/XXXX2/1/"; // Otra más si aplica
-        }
-      });
-  </script>
-
+  <!-- Script de Datawrapper para lazy‐loading de iframes -->
+  <script src="https://static.dwcdn.net/js/embed.js"></script>
 </body>
 </html>
-
