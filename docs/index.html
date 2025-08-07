@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --bg: #f2e9e4;
@@ -17,11 +18,13 @@
       --maxW: 680px;
       --pad: 1.5rem;
     }
+
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       background: var(--bg);
       color: var(--fg);
@@ -29,59 +32,103 @@
       line-height: 1.6;
       padding: var(--pad);
     }
+
     main {
       max-width: var(--maxW);
       margin: 0 auto;
     }
+
     h1, h2, h3 {
       font-family: 'Archivo Black', sans-serif;
+      font-weight: 400;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      font-weight: 400;
     }
 
-    h1 { font-size: 2rem; }
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
     h2 { font-size: 1.5rem; }
     h3 { font-size: 1.25rem; }
+
     p, blockquote, ul {
       margin-bottom: 1.2rem;
     }
+
     strong { font-weight: 700; }
+
     blockquote {
       border-left: 4px solid var(--primary);
       padding-left: 1rem;
       font-style: italic;
     }
+
     ul {
       padding-left: 1.5rem;
       list-style: disc;
     }
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+
     .fade-in.visible {
       opacity: 1;
       transform: none;
     }
+
+    /* === CABECERA === */
+    .lede-header {
+     background: url('assets/lede.svg') center/cover no-repeat;
+      padding: 4rem 1rem;
+      text-align: center;
+      color: var(--fg);
+    }
+
+    .lede-header h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      margin: 0 auto 1rem;
+      max-width: var(--maxW);
+    }
+
+    .lede-header .author {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--fg);
+    }
+
+    .lede-header .subtitle {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: #444;
+      max-width: var(--maxW);
+      margin: 1rem auto 0;
+    }
   </style>
 </head>
+
 <body>
-  <header style="background-color: rgba(230, 138, 125, 0.15); padding: 3rem 1rem; text-align: center;">
-    <h1 style="font-family: 'Archivo Black', sans-serif; font-size: 2rem; font-weight: 900; margin: 0 auto; max-width: var(--maxW);">
+  <header class="lede-header">
+    <h1>
       When Birth Becomes an Emergency:<br>
       Delivering Under Pressure in Mexico
     </h1>
-    <p style="font-family: 'Lora', serif; font-size: 1.1rem; font-weight: bold; margin-top: 1rem; color: var(--fg);">
-      By Scarlett Lindero
-    </p>
-    <p style="font-family: 'Lora', serif; font-size: 1rem; max-width: var(--maxW); margin: 1rem auto 0; color: #444;">
-      An investigation into how overcrowding, emergency surgeries, and the absence of OB-GYN specialists are shaping childbirth in Mexico’s public hospitals.
+    <p class="author">By Scarlett Lindero</p>
+    <p class="subtitle">
+      An investigation into how overcrowding, emergency surgeries,<br>
+      and the absence of OB-GYN specialists are shaping childbirth<br>
+      in Mexico’s public hospitals.
     </p>
   </header>
-  <main>
 
+  <main>
       <p>In Mexico, giving birth is often not a choice. For more than half of women, childbirth ends in surgery—not by plan, but by pressure. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
       <div style="min-height:514px" id="datawrapper-vis-2PmGg"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2PmGg/embed.js" charset="utf-8" data-target="#datawrapper-vis-2PmGg"></script><noscript><img src="https://datawrapper.dwcdn.net/2PmGg/full.png" alt="Pie chart" /></noscript></div>
       <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
