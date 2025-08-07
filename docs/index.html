@@ -25,70 +25,35 @@
       padding: 0;
     }
 
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Lora', serif;
-      line-height: 1.6;
-      padding: var(--pad);
-    }
-
-    main {
-      max-width: var(--maxW);
-      margin: 0 auto;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Archivo Black', sans-serif;
-      font-weight: 400;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-    }
-
-    .lede-header {
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>When Birth Becomes an Emergency</title>
-
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg: #f2e9e4;
-      --fg: #111;
-      --primary: #8b0000;
-      --maxW: 680px;
-      --pad: 1.5rem;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
       font-family: 'Lora', serif;
       line-height: 1.6;
-      padding: var(--pad);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('lede.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      filter: brightness(0.4);
+      z-index: -1;
     }
 
     main {
       max-width: var(--maxW);
       margin: 0 auto;
+      padding: var(--pad);
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4); /* mejora contraste */
     }
 
     h1, h2, h3 {
@@ -101,20 +66,6 @@
     h1 {
       font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.2;
-    }
-
-    .lede-header {
-      background: url('lede.jpg') center/cover no-repeat;
-      padding: 6rem 1rem;
-      text-align: center;
-      color: var(--fg);
-    }
-
-    .lede-header h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      max-width: var(--maxW);
-      margin: 0 auto 1rem;
     }
 
     .author {
@@ -124,7 +75,6 @@
 
     .subtitle {
       font-size: 1rem;
-      color: #333;
       max-width: var(--maxW);
       margin: 1rem auto 0;
     }
@@ -158,7 +108,7 @@
 </head>
 
 <body>
-  <header class="lede-header">
+  <main>
     <h1>When Birth Becomes an Emergency:<br>Delivering Under Pressure in Mexico</h1>
     <p class="author">By Scarlett Lindero</p>
     <p class="subtitle">
@@ -166,7 +116,6 @@
       and the absence of OB-GYN specialists are shaping childbirth<br>
       in Mexico’s public hospitals.
     </p>
-  </header>
   <main>
       <p>In Mexico, giving birth is often not a choice. For more than half of women, childbirth ends in surgery—not by plan, but by pressure. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
       <div style="min-height:514px" id="datawrapper-vis-2PmGg"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2PmGg/embed.js" charset="utf-8" data-target="#datawrapper-vis-2PmGg"></script><noscript><img src="https://datawrapper.dwcdn.net/2PmGg/full.png" alt="Pie chart" /></noscript></div>
