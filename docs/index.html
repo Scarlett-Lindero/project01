@@ -30,10 +30,12 @@
       padding: 0;
       font-family: 'Lora', serif;
       line-height: 1.6;
-      background: url('lede.jpg') no-repeat top center;
+      color: var(--fg);
+      background-image: url('lede.jpg');
+      background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
-      color: var(--fg);
+      background-position: center -80px;
     }
 
     main {
@@ -81,10 +83,33 @@
       padding-left: 1.5rem;
       list-style: disc;
     }
+
+    /* Responsive fondo en móviles */
+    @media (max-width: 768px) {
+      html, body {
+        background-position: center top;
+        background-attachment: scroll;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <main>
+    <h1>When Birth Becomes an Emergency:<br>Delivering Under Pressure in Mexico</h1>
+    <p class="author">By Scarlett Lindero</p>
+    <p class="subtitle">
+      An investigation into how overcrowding, emergency surgeries,<br>
+      and the absence of OB-GYN specialists are shaping childbirth<br>
+      in Mexico’s public hospitals.
+    </p>
+
+    <p>In Mexico, giving birth is often not a choice. For more than half of women, childbirth ends in surgery—not by plan, but by pressure. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
+
+    <!-- Aquí continúa tu contenido -->
+  </main>
+</body>
+</html>
   <main>
     <h1>When Birth Becomes an Emergency:<br>Delivering Under Pressure in Mexico</h1>
     <p class="author">By Scarlett Lindero</p>
