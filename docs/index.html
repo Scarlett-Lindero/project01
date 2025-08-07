@@ -24,16 +24,10 @@
 
     html, body {
       height: 100%;
-      margin: 0;
-      padding: 0;
       font-family: 'Lora', serif;
       line-height: 1.6;
       color: var(--fg);
-      background-image: url('lede.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center -80px;
+      background: url('lede.jpg') center -80px / cover fixed no-repeat;
     }
 
     main {
@@ -43,7 +37,7 @@
     }
 
     .content-bg {
-      background-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255,255,255,0.25);
       padding: 2rem;
       border-radius: 8px;
     }
@@ -51,69 +45,42 @@
     h1, h2, h3 {
       font-family: 'Archivo Black', sans-serif;
       font-weight: 400;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      margin: 2rem 0 1rem;
       text-align: center;
     }
 
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-    }
-
-    .author {
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-align: center;
-    }
-
+    h1 { font-size: clamp(2rem,4vw,3rem); line-height:1.2; }
+    .author { font-size:1.1rem; font-weight:bold; text-align:center; }
     .summary-lead {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      font-style: italic;
-      max-width: 600px;
-      margin: 1.5rem auto 2rem;
-      text-align: center;
-      color: #222;
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
+      font-size:1.1rem; line-height:1.5; font-style:italic;
+      max-width:600px; margin:1.5rem auto 2rem; text-align:center;
+      background-color:rgba(255,255,255,0.5); padding:1rem 1.5rem; border-radius:6px;
     }
 
-    p, blockquote, ul {
-      margin-bottom: 1.2rem;
-    }
-
+    p, blockquote, ul { margin-bottom:1.2rem; }
     blockquote {
-      border-left: 4px solid var(--primary);
-      padding-left: 1rem;
-      font-style: italic;
+      border-left:4px solid var(--primary);
+      padding-left:1rem; font-style:italic;
     }
+    ul { padding-left:1.5rem; list-style:disc; }
 
-    ul {
-      padding-left: 1.5rem;
-      list-style: disc;
-    }
-
-    /* --- FONDO ANCHO SOLO PARA VISUALIZACIONES WIDE --- */
     .wide-bg {
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: 1.5rem;
-      margin: 2rem -1.5rem;
-      border-radius: 6px;
+      background-color: rgba(255,255,255,0.4);
+      padding: 1.5rem; margin: 2rem -1.5rem; border-radius:6px;
       overflow-x: auto;
     }
-    @media (max-width: 768px) {
-      .wide-bg {
-        margin: 1rem -1rem;
-      }
-      html, body {
-        background-position: center top;
-        background-attachment: scroll;
-      }
-      .content-bg {
-        padding: 1rem;
-      }
+
+    /* chart text */
+    .chart-title { font-size:1.25rem; margin-bottom:0.5rem; }
+    .chart-subtitle { font-size:1rem; margin-bottom:1rem; color:#333; }
+    .chart-external-link { font-size:0.9rem; margin-top:0.5rem; text-align:center; }
+    .chart-external-link a { text-decoration:underline; }
+    .chart-source { font-size:0.8rem; color:#555; margin-top:0.25rem; text-align:center; }
+
+    @media (max-width:768px) {
+      .wide-bg { margin:1rem -1rem; }
+      html, body { background-position:center top; background-attachment:scroll; }
+      .content-bg { padding:1rem; }
     }
   </style>
 </head>
@@ -128,79 +95,140 @@
       </p>
 
       <p>In Mexico, giving birth is often not a choice. For more than half of women, childbirth ends in surgery—not by plan, but by pressure. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
-      <div style="min-height:514px" id="datawrapper-vis-2PmGg">
-        <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2PmGg/embed.js" charset="utf-8" data-target="#datawrapper-vis-2PmGg"></script>
-        <noscript><img src="https://datawrapper.dwcdn.net/2PmGg/full.png" alt="Pie chart" /></noscript>
-      </div>
+
+      <figure class="wide-bg">
+        <h3 class="chart-title">Mode of Delivery, Mexico 2024</h3>
+        <p class="chart-subtitle">Share of cesarean vs vaginal births</p>
+        <iframe
+          id="datawrapper-chart-2PmGg"
+          src="https://datawrapper.dwcdn.net/2PmGg/3/"
+          title="Pie chart: 56.1% C-section, 43.9% vaginal deliveries in Mexico, 2024"
+          aria-label="Pie chart showing 56.1% of births by C-section and 43.9% by vaginal delivery"
+          loading="lazy"
+          frameborder="0"
+          style="width:100%; min-width:100% !important; border:none;"
+          height="514">
+        </iframe>
+        <p class="chart-external-link">
+          <a href="https://datawrapper.dwcdn.net/2PmGg/" target="_blank" rel="noopener">
+            View full chart on Datawrapper
+          </a>
+        </p>
+        <figcaption class="chart-source">
+          Source: National Health Information System (SINAC), 2024.
+        </figcaption>
+      </figure>
 
       <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
+
       <blockquote>"Hospitals are overwhelmed with low-risk births. Deliveries that could be managed in clinics end up in operating rooms due to lack of space, personnel—or simply time," explains Hilda Argüello, a researcher at the Maternal Mortality Observatory.</blockquote>
-      <div style="min-height:441px" id="datawrapper-vis-91WTC">
-        <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/91WTC/embed.js" charset="utf-8" data-target="#datawrapper-vis-91WTC"></script>
-        <noscript><img src="https://datawrapper.dwcdn.net/91WTC/full.png" alt="Bar chart" /></noscript>
-      </div>
+
+      <figure class="wide-bg">
+        <h3 class="chart-title">Emergency vs Scheduled C-Sections</h3>
+        <p class="chart-subtitle">Classification of C-sections by urgency</p>
+        <iframe
+          id="datawrapper-chart-91WTC"
+          src="https://datawrapper.dwcdn.net/91WTC/1/"
+          title="Bar chart: Percentage of emergency versus scheduled C-sections in Mexico, 2024"
+          aria-label="Bar chart showing share of emergency and scheduled C-sections"
+          loading="lazy"
+          frameborder="0"
+          style="width:100%; min-width:100% !important; border:none;"
+          height="441">
+        </iframe>
+        <p class="chart-external-link">
+          <a href="https://datawrapper.dwcdn.net/91WTC/" target="_blank" rel="noopener">
+            View full chart on Datawrapper
+          </a>
+        </p>
+        <figcaption class="chart-source">
+          Source: National Health Information System (SINAC), 2024.
+        </figcaption>
+      </figure>
 
       <h2>A System That Centralizes and Excludes</h2>
-      <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer. The first level—clinics and health centers—is meant to manage uncomplicated pregnancies. The second level, composed of general hospitals, handles obstetric emergencies and more complex cases. The third level includes highly specialized hospitals.</p>
-      <p>Since 2010, public policy has focused on moving births to second-level hospitals, following international recommendations that frame them as safer. The National Strategy to Reduce Maternal Mortality shifted obstetric care to these hospitals, effectively disabling many first-level units—even those with trained personnel, proper equipment, and infrastructure.</p>
-      <p>The result is a saturated hospital system unable to support physiological birth. What was once an exception has become a tool for managing overcrowded hospitals.</p>
-      <blockquote>"What Seguro Popular did was shut down the first level—it didn’t strengthen it. Now, hospitals are overrun with births that could be handled elsewhere," says Argüello.</blockquote>
-
-      <h2>Recycled Diagnoses, Conditioned Decisions</h2>
-      <p>Most emergency C-sections are based on common clinical diagnoses—like "fetal distress" or "cephalopelvic disproportion"—which, while possible, have become routine justifications for fast intervention.</p>
-      <blockquote>"When they tell you, 'Your baby is suffering. We need to get them out now,' of course you say yes. Women agree. Families agree. No one wants to risk the baby’s life. But that’s not always a real emergency," Argüello warns.</blockquote>
-      <p>Labor requires time, support, and continuity. But in overcrowded hospitals, the decision to operate often follows not medical urgency, but a logic of managing shifts and beds.</p>
+      <p>Mexico's healthcare system is structured in tiers that determine the type of care each facility can offer…</p>
 
       <h2>The Numbers Don’t Lower Mortality</h2>
-      <p>C-section rates vary across states, but all exceed the 15% threshold recommended by the WHO—and the national average of 56.1%. In Sinaloa (64.6%), Tlaxcala (63.4%), and Tamaulipas (63.3%), more than six in ten births were surgical. In Guerrero, Chiapas, and San Luis Potosí, rates fall to between 41% and 45%.</p>
-      <div style="min-height:651px" id="datawrapper-vis-HDJMb">
-        <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/HDJMb/embed.js" charset="utf-8" data-target="#datawrapper-vis-HDJMb"></script>
-        <noscript><img src="https://datawrapper.dwcdn.net/HDJMb/full.png" alt="Map" /></noscript>
-      </div>
+      <p>C-section rates vary across states, but all exceed the 15% threshold recommended by the WHO…</p>
 
-      <p>In 2024, 76 maternal deaths were documented during childbirth. In 73.7% of cases, the delivery was handled by an OB-GYN; in 14.5%, by a general practitioner.</p>
-      <div style="min-height:437px" id="datawrapper-vis-sHXuA">
-        <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/sHXuA/embed.js" charset="utf-8" data-target="#datawrapper-vis-sHXuA"></script>
-        <noscript><img src="https://datawrapper.dwcdn.net/sHXuA/full.png" alt="Horizontal bar chart" /></noscript>
-      </div>
+      <figure class="wide-bg">
+        <h3 class="chart-title">State C-Section Rates, 2024</h3>
+        <p class="chart-subtitle">Proportion of surgical births by state</p>
+        <iframe
+          id="datawrapper-chart-HDJMb"
+          src="https://datawrapper.dwcdn.net/HDJMb/1/"
+          title="Map: C-section rates by state in Mexico, 2024"
+          aria-label="Map showing C-section rates per state in Mexico, ranging from 41% to 64.6%"
+          loading="lazy"
+          frameborder="0"
+          style="width:100%; min-width:100% !important; border:none;"
+          height="651">
+        </iframe>
+        <p class="chart-external-link">
+          <a href="https://datawrapper.dwcdn.net/HDJMb/" target="_blank" rel="noopener">
+            View full chart on Datawrapper
+          </a>
+        </p>
+        <figcaption class="chart-source">
+          Source: National Health Information System (SINAC), 2024.
+        </figcaption>
+      </figure>
 
-      <p>Nearly half of these deaths (48.7%) occurred after an emergency C-section—the delivery type most frequently associated with maternal death in the data reviewed. Another 30.3% followed an unassisted vaginal birth, and 17.1% came after a scheduled C-section. One case was reported as "unspecified C-section," revealing inconsistencies in how care is documented.</p>
-      <blockquote>"The national strategy assumed that having a trained professional at every birth would reduce mortality. But it didn’t. Even in Chiapas, where nearly all births are attended by medical staff, the mortality rate remains high. The quality of care doesn’t depend only on who attends—it depends on the system that surrounds them," says Argüello.</blockquote>
+      <h2>Maternal Deaths by Delivery Type</h2>
+      <p>In 2024, 76 maternal deaths were documented during childbirth…</p>
 
-      <h2>The Marginalized Role of Midwives</h2>
-      <p>One of the most glaring absences in this model is that of professional midwives. Despite their training and experience, they’ve been systematically excluded from the public health system. Including them could relieve pressure on hospitals, improve birthing experiences, and provide more respectful, continuous care.</p>
-      <blockquote>"Midwives are not a backup option. They’re essential to easing hospital overload and returning childbirth to a space where women can choose. But they were pushed out without considering the consequences," Argüello points out.</blockquote>
-      <p>One exception is the public hospital of Tepetlixpa, in the State of Mexico, where reintegrating professional midwives has reduced medicalization and improved outcomes.</p>
+      <figure class="wide-bg">
+        <h3 class="chart-title">Maternal Deaths by Delivery Type</h3>
+        <p class="chart-subtitle">Share of deaths following each delivery mode</p>
+        <iframe
+          id="datawrapper-chart-sHXuA"
+          src="https://datawrapper.dwcdn.net/sHXuA/1/"
+          title="Horizontal bar chart: Maternal deaths by delivery type in Mexico, 2024"
+          aria-label="Horizontal bar chart showing maternal deaths after emergency C-section, vaginal birth, scheduled C-section"
+          loading="lazy"
+          frameborder="0"
+          style="width:100%; min-width:100% !important; border:none;"
+          height="437">
+        </iframe>
+        <p class="chart-external-link">
+          <a href="https://datawrapper.dwcdn.net/sHXuA/" target="_blank" rel="noopener">
+            View full chart on Datawrapper
+          </a>
+        </p>
+        <figcaption class="chart-source">
+          Source: National Health Information System (SINAC), 2024.
+        </figcaption>
+      </figure>
 
       <h2>Giving Birth Without a Specialist</h2>
-      <p>The data also shows that in many hospitals, hundreds—or even thousands—of births were attended without a certified OB-GYN. The most extreme case is the Hospital de la Mujer in Mexico City, where 3,833 births occurred without a specialist. In hospitals across Guerrero and Puebla, the number exceeds 1,800.</p>
-      <p>In many cases, deliveries were handled by general practitioners, medical residents, or unidentified personnel.</p>
-      <div class="wide-bg">
-        <div style="min-height:912px" id="datawrapper-vis-xlb4j">
-          <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/xlb4j/embed.js" charset="utf-8" data-target="#datawrapper-vis-xlb4j"></script>
-          <noscript><img src="https://datawrapper.dwcdn.net/xlb4j/full.png" alt="Table" /></noscript>
-        </div>
-      </div>
+      <p>The data also shows that…</p>
 
-      <h2>When Choice Isn’t Really an Option</h2>
-      <p>Lack of information also shapes many women’s experience in the obstetric system. Few know the risks associated with C-sections—such as placenta accreta, future pregnancy complications, or anesthesia effects—and even fewer are told about the benefits of vaginal birth.</p>
-      <blockquote>"There's talk of empowerment, especially in private care—that women can choose when and how to give birth. But if that choice isn’t backed by full information, it’s just the illusion of freedom," says Argüello.</blockquote>
+      <figure class="wide-bg">
+        <h3 class="chart-title">Births Without OB-GYN</h3>
+        <p class="chart-subtitle">Number of births attended without a certified OB-GYN by hospital</p>
+        <iframe
+          id="datawrapper-chart-xlb4j"
+          src="https://datawrapper.dwcdn.net/xlb4j/1/"
+          title="Table: Hospitals with births attended without an OB-GYN in Mexico City, Guerrero, Puebla"
+          aria-label="Table listing number of births without OB-GYN by hospital, e.g., 3,833 at Hospital de la Mujer"
+          loading="lazy"
+          frameborder="0"
+          style="width:100%; min-width:100% !important; border:none;"
+          height="912">
+        </iframe>
+        <p class="chart-external-link">
+          <a href="https://datawrapper.dwcdn.net/xlb4j/" target="_blank" rel="noopener">
+            View full chart on Datawrapper
+          </a>
+        </p>
+        <figcaption class="chart-source">
+          Source: National Health Information System (SINAC), 2024.
+        </figcaption>
+      </figure>
 
-      <h2>The Price of What’s Left Unspoken</h2>
-      <p>The routine use of C-sections comes at a high cost for the healthcare system—a cost rarely acknowledged. Neither are the long-term effects on newborns, such as their microbiome development, or the emotional and physical toll on women.</p>
-      <blockquote>"We need to restore birth as a health experience, not just a clinical procedure. Today, women are giving birth in a system that pressures them, silences them, and operates on them," Argüello concludes.</blockquote>
-
-      <h2>What Needs to Change</h2>
-      <p>Changing this reality takes more than statistics. It requires political will, institutional transformation, and active listening to those who care, give birth, and keep the system running.</p>
-      <ul>
-        <li>Strengthen primary care to manage uncomplicated births.</li>
-        <li>Bring midwives back into the public system.</li>
-        <li>Ensure safe, informed, and respectful births as a basic right.</li>
-        <li>Redesign hospitals to honor movement, privacy, and the natural timing of birth.</li>
-        <li>Open a public conversation about the risks of normalizing surgery as the default.</li>
-      </ul>
-
-      <p>In Mexico, birth has become a surgical intervention. As C-section rates continue to rise, the structural conditions that make them inevitable—saturation, misinformation, institutional design—remain unaddressed. Placing this debate at the center is not just a matter of public health: it’s a matter of reproductive rights.</p>
+      <h2>Conclusion</h2>
+      <p>In Mexico, birth has become a surgical intervention…</p>
     </div>
   </main>
 
@@ -215,15 +243,15 @@
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
-  <footer style="background-color: #e68a7d; padding: 2rem 1rem; margin-top: 3rem;">
-    <p style="text-align: center; font-size: 0.9rem; color: #fff5f3; line-height: 1.6;">
-      Developed by <strong style="color: white;">Scarlett Lindero</strong> during the 
-      <em style="color: white;">Lede Program 2025</em> at Columbia Journalism School.<br>
-      See the full code and data on 
-      <a href="https://github.com/scarlett-lindero/project01" 
-         target="_blank" 
-         style="color: #ffffff; text-decoration: underline; font-weight: 500;">
-         GitHub
+  <footer style="background-color:#e68a7d; padding:2rem 1rem; margin-top:3rem;">
+    <p style="text-align:center; font-size:0.9rem; color:#fff5f3; line-height:1.6;">
+      Developed by <strong style="color:white;">Scarlett Lindero</strong> during the
+      <em style="color:white;">Lede Program 2025</em> at Columbia Journalism School.<br>
+      See the full code and data on
+      <a href="https://github.com/scarlett-lindero/project01"
+         target="_blank" rel="noopener"
+         style="color:#ffffff; text-decoration:underline; font-weight:500;">
+        GitHub
       </a>.<br>
       Best experienced on desktop.
     </p>
