@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Evita caché en el navegador -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>When Birth Becomes an Emergency</title>
 
@@ -17,6 +15,7 @@
     :root {
       --fg: #111;
       --primary: #8b0000;
+      --titleColor: #6e3651; 
       --maxW: 680px;
       --pad: 1.5rem;
     }
@@ -48,21 +47,22 @@
       margin: 2rem 0 1rem;
     }
     h1 {
-      font-size: clamp(2rem,4vw,3rem);
-      line-height:1.2;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: var(--titleColor);
     }
     .author {
       text-align: center;
       font-weight: bold;
-      margin-bottom:1rem;
+      margin-bottom: 1rem;
     }
     .summary-lead {
-      max-width:600px;
-      margin:1.5rem auto 2rem;
-      font-style:italic;
+      max-width: 600px;
+      margin: 1.5rem auto 2rem;
+      font-style: italic;
       background: rgba(255,255,255,0.5);
-      padding:1rem 1.5rem;
-      border-radius:6px;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -74,7 +74,6 @@
       <p class="summary-lead">
         In 2024, most cesarean deliveries in Mexico’s public hospitals were classified as emergencies — a pattern that may reflect the strain on the country’s obstetric care system.
       </p>
-
       <p>In Mexico, giving birth is often not a choice. For more than half of women, childbirth ends in surgery—not by plan, but by pressure. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
       <div style="min-height:514px" id="datawrapper-vis-2PmGg">
         <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2PmGg/embed.js" charset="utf-8" data-target="#datawrapper-vis-2PmGg"></script>
