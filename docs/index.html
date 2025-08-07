@@ -12,7 +12,6 @@
 
   <style>
     :root {
-      --bg: #f2e9e4;
       --fg: #111;
       --primary: #8b0000;
       --maxW: 680px;
@@ -31,30 +30,60 @@
       padding: 0;
       font-family: 'Lora', serif;
       line-height: 1.6;
-      background-color: var(--bg); /* Fallback por si no carga la imagen */
-      color: var(--fg);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('docs/fondo-rosita.jpg'); /* cambia este nombre si usas otro */
+      background: url('lede.jpg') no-repeat top center;
       background-size: cover;
-      background-position: top center;
       background-attachment: fixed;
-      background-repeat: no-repeat;
-      z-index: -1;
+      color: var(--fg);
     }
 
     main {
       max-width: var(--maxW);
       margin: 0 auto;
       padding: var(--pad);
-      backgr
+    }
+
+    h1, h2, h3 {
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 400;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .author {
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      text-align: center;
+      margin: 1rem auto 2rem;
+    }
+
+    p, blockquote, ul {
+      margin-bottom: 1.2rem;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+  </style>
+</head>
+
 <body>
   <main>
     <h1>When Birth Becomes an Emergency:<br>Delivering Under Pressure in Mexico</h1>
@@ -64,9 +93,6 @@
       and the absence of OB-GYN specialists are shaping childbirth<br>
       in Mexico’s public hospitals.
     </p>
-
-    <p>In Mexico, giving birth is often not a choice. For more than half of women, childbirth ends in surgery—not by plan, but by pressure. [...]</p>
-  <main>
       <p>In Mexico, giving birth is often not a choice. For more than half of women, childbirth ends in surgery—not by plan, but by pressure. In 2024, over half of all hospital births were C-sections. According to data from the National Health Information System (SINAC), 56.1% of births were resolved through surgical intervention. In total, 792,152 cesarean sections were performed—and more than half of them, 52.1%, were classified as "emergency procedures."</p>
       <div style="min-height:514px" id="datawrapper-vis-2PmGg"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/2PmGg/embed.js" charset="utf-8" data-target="#datawrapper-vis-2PmGg"></script><noscript><img src="https://datawrapper.dwcdn.net/2PmGg/full.png" alt="Pie chart" /></noscript></div>
       <p>Far from responding solely to medical needs, the high rate of C-sections reveals an obstetric care model deeply shaped by hospital saturation, staff shortages, and the breakdown of alternatives like first-level care or professional midwifery.</p>
