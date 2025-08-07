@@ -31,6 +31,8 @@
       padding: 0;
       font-family: 'Lora', serif;
       line-height: 1.6;
+      background-color: var(--bg); /* Fallback por si no carga la imagen */
+      color: var(--fg);
     }
 
     body::before {
@@ -40,11 +42,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('lede.jpg'); /* Cambia este archivo si quieres otro fondo */
+      background-image: url('docs/fondo-rosita.jpg'); /* cambia este nombre si usas otro */
       background-size: cover;
-      background-position: center;
+      background-position: top center;
       background-attachment: fixed;
-      filter: brightness(0.4);
+      background-repeat: no-repeat;
       z-index: -1;
     }
 
@@ -52,62 +54,7 @@
       max-width: var(--maxW);
       margin: 0 auto;
       padding: var(--pad);
-      color: white;
-      background-color: rgba(0, 0, 0, 0.4); /* Mejora contraste para lectura */
-      border-radius: 8px;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Archivo Black', sans-serif;
-      font-weight: 400;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-    }
-
-    .author {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      max-width: var(--maxW);
-      margin: 1rem auto 0;
-    }
-
-    p, blockquote, ul {
-      margin-bottom: 1.2rem;
-    }
-
-    blockquote {
-      border-left: 4px solid var(--primary);
-      padding-left: 1rem;
-      font-style: italic;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      list-style: disc;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
-    }
-  </style>
-</head>
-
+      backgr
 <body>
   <main>
     <h1>When Birth Becomes an Emergency:<br>Delivering Under Pressure in Mexico</h1>
